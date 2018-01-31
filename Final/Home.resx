@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>San Francisco Text Med, 20pt, style=Bold</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 238</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>706, 32</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>CHÀO MỪNG ĐẾN VỚI HỆ THỐNG TRỢ GIÚP QUYẾT ĐỊNH</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnQuanLy.Font" type="System.Drawing.Font, System.Drawing">
+    <value>San Francisco Text Med, 11pt, style=Bold</value>
+  </data>
+  <data name="btnQuanLy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnQuanLy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 402</value>
+  </data>
+  <data name="btnQuanLy.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btnQuanLy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 59</value>
+  </data>
+  <data name="btnQuanLy.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnQuanLy.Text" xml:space="preserve">
+    <value>QUẢN LÝ</value>
+  </data>
+  <data name="btnQuanLy.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnQuanLy.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnQuanLy.Name" xml:space="preserve">
+    <value>btnQuanLy</value>
+  </data>
+  <data name="&gt;&gt;btnQuanLy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnQuanLy.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnQuanLy.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnTuVan.Font" type="System.Drawing.Font, System.Drawing">
+    <value>San Francisco Text Med, 11pt, style=Bold</value>
+  </data>
+  <data name="btnTuVan.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTuVan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>85, 402</value>
+  </data>
+  <data name="btnTuVan.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btnTuVan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 59</value>
+  </data>
+  <data name="btnTuVan.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnTuVan.Text" xml:space="preserve">
+    <value>TƯ VẤN</value>
+  </data>
+  <data name="btnTuVan.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnTuVan.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnTuVan.Name" xml:space="preserve">
+    <value>btnTuVan</value>
+  </data>
+  <data name="&gt;&gt;btnTuVan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnTuVan.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnTuVan.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnThoat.Font" type="System.Drawing.Font, System.Drawing">
+    <value>San Francisco Text Med, 11pt, style=Bold</value>
+  </data>
+  <data name="btnThoat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnThoat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>630, 402</value>
+  </data>
+  <data name="btnThoat.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btnThoat.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>17, 0, 0, 0</value>
+  </data>
+  <data name="btnThoat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 59</value>
+  </data>
+  <data name="btnThoat.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnThoat.Text" xml:space="preserve">
+    <value>THOÁT</value>
+  </data>
+  <data name="btnThoat.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnThoat.Name" xml:space="preserve">
+    <value>btnThoat</value>
+  </data>
+  <data name="&gt;&gt;btnThoat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnThoat.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnThoat.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="pictureBox2.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="pictureBox2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 16</value>
+  </data>
+  <data name="pictureBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 87</value>
+  </data>
+  <data name="pictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
+    <value>pictureBox2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="pictureBox1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox1.InitialImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>875, 120</value>
+  </data>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnHuongDan.Font" type="System.Drawing.Font, System.Drawing">
+    <value>San Francisco Text Med, 11pt, style=Bold</value>
+  </data>
+  <data name="btnHuongDan.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnHuongDan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>450, 402</value>
+  </data>
+  <data name="btnHuongDan.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="btnHuongDan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 59</value>
+  </data>
+  <data name="btnHuongDan.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnHuongDan.Text" xml:space="preserve">
+    <value>HƯỚNG DẪN</value>
+  </data>
+  <data name="btnHuongDan.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnHuongDan.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnHuongDan.Name" xml:space="preserve">
+    <value>btnHuongDan</value>
+  </data>
+  <data name="&gt;&gt;btnHuongDan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnHuongDan.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnHuongDan.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAABLEAAAABCAYAAAAhOjwyAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
+        EQAAFxEByibzPwAAAClJREFUWEftw0ENADAIBLCZYB7PBXZQOWzs0SY9lembeaqqqqr648r0AorLGI71
+        xSSXAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 279</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>                                                                                                                            </value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>870, 609</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAMjIAAAEAIADIKAAAFgAAACgAAAAyAAAAZAAAAAEAIAAAAAAAECcAAHQSAAB0EgAAAAAAAAAA
+        AABmAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YA
+        AP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YA
+        AP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YA
+        AP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YA
+        AP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YA
+        AP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YA
+        AP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP//////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////ZgAA/2YA
+        AP9mAAD/ZgAA////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        //////////////////9mAAD/ZgAA/2YAAP9mAAD/////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////ZgAA/2YA
+        AP9mAAD/ZgAA////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        //////////////////9mAAD/ZgAA/2YAAP9mAAD/////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////ZgAA/2YA
+        AP9mAAD/ZgAA////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        //////////////////9mAAD/ZgAA/2YAAP9mAAD/////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////ZgAA/2YA
+        AP9mAAD/ZgAA////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        //////////////////9mAAD/ZgAA/2YAAP9mAAD/////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////ZgAA/2YA
+        AP9mAAD/ZgAA////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        //////////////////9mAAD/ZgAA/2YAAP9mAAD/////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////ZgAA/2YA
+        AP9mAAD/ZgAA////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        //////////////////9mAAD/ZgAA/2YAAP9mAAD/////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////5////8/b
+        2//Ptrb/z7a2/+fb2//////////////////////////////////////////////////n////z9vb/8+2
+        tv/Ptrb/59vb/////////////////////////////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        //+22///ZgA6/2YAAP9mAAD/ZgAA/2YAAP9mAAD/gQAA/7ZmOv/n27b/////////////////////////
+        ////////z9v//2Y6Zv9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP+2Ojr//9u2////////////////////
+        ///P2///Zjpm/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/7Y6Ov//27b/////////////////ZgAA/2YA
+        AP9mAAD/ZgAA/////////////////7bb//9mADr/ZgAA/8+QOv/Ptrb/z7a2/51mkP9mADr/ZgAA/2YA
+        AP+2Zjr////b/////////////////522//9mADr/ZgAA/506AP/ntpD/59vb/+fb2/+dkLb/ZgA6/2YA
+        AP+dAAD///+2////////////nbb//2YAOv9mAAD/nToA/+e2kP/n29v/59vb/52Qtv9mADr/ZgAA/50A
+        AP///7b///////////9mAAD/ZgAA/2YAAP9mAAD/////////////////ttv//2YAOv9mAAD//7Zm////
+        //////////////////+dttv/ZgAA/2YAAP/PZgD////////////P////ZgBm/2YAAP+2OgD////b////
+        //////////////////+22///ZgA6/2YAAP/nkDr//////8////9mAGb/ZgAA/7Y6AP///9v/////////
+        /////////////7bb//9mADr/ZgAA/+eQOv///////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        //+22///ZgA6/2YAAP//tmb///////////////////////////+BkNv/ZgAA/4EAAP//25D//////8//
+        //+dZpD/tmZm////tv///////////////////////////+f///9mOpD/ZgAA/7Y6AP///9v/z////51m
+        kP+2Zmb///+2////////////////////////////5////2Y6kP9mAAD/tjoA////2///////ZgAA/2YA
+        AP9mAAD/ZgAA/////////////////7bb//9mADr/ZgAA//+2Zv///////////////////////////8//
+        //9mAGb/ZgAA/+eQOv//////////////////////////////////////////////////////5////2Y6
+        kP9mAAD/tjoA////2//////////////////////////////////////////////////n////ZjqQ/2YA
+        AP+2OgD////b//////9mAAD/ZgAA/2YAAP9mAAD/////////////////ttv//2YAOv9mAAD//7Zm////
+        ////////////////////////5////2Y6kP9mAAD/tjoA////2///////////////////////////////
+        //////////////////+22///ZgA6/2YAAP/PZgD/////////////////////////////////////////
+        /////////////7bb//9mADr/ZgAA/89mAP///////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        //+22///ZgA6/2YAAP//tmb/////////////////////////////////Zma2/2YAAP+dAAD///+2////
+        ////////////////////////////////////////nbbb/2YAOv9mAAD/gQAA///bkP//////////////
+        //////////////////////////////////+dttv/ZgA6/2YAAP+BAAD//9uQ////////////ZgAA/2YA
+        AP9mAAD/ZgAA/////////////////7bb//9mADr/ZgAA//+2Zv//////////////////////////////
+        //9mZrb/ZgAA/50AAP///7b////////////////////////////P29v/gWaQ/2YAOv9mAAD/ZgAA/506
+        AP//27b//////////////////////////////////////8/b2/+BZpD/ZgA6/2YAAP9mAAD/nToA///b
+        tv////////////////9mAAD/ZgAA/2YAAP9mAAD/////////////////ttv//2YAOv9mAAD//7Zm////
+        /////////////////////////////2Zmtv9mAAD/nQAA////tv////////////////+dttv/ZgA6/2YA
+        AP9mAAD/ZgAA/7ZmOv//27b//////////////////////////////////////5222/9mADr/ZgAA/2YA
+        AP9mAAD/tmY6///btv///////////////////////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        //+22///ZgA6/2YAAP//tmb/////////////////////////////////Zma2/2YAAP+2OgD////b////
+        ////////gWa2/2YAAP9mAAD/nToA/+e2kP//////////////////////////////////////////////
+        //+BZrb/ZgAA/2YAAP+dOgD/57aQ////////////////////////////////////////////ZgAA/2YA
+        AP9mAAD/ZgAA/////////////////7bb//9mADr/ZgAA//+2Zv///////////////////////////8//
+        //9mAGb/ZgAA/89mAP///////////7bb//9mADr/ZgAA/89mAP//////////////////////////////
+        ////////////////////////ttv//2YAOv9mAAD/z2YA////////////////////////////////////
+        //////////////////9mAAD/ZgAA/2YAAP9mAAD/////////////////ttv//2YAOv9mAAD//7Zm////
+        ////////////////////////nbb//2YAAP9mAAD//7Zm////////////gZDb/2YAAP+BAAD//9uQ////
+        //////////////////////////////////////////////////+BkNv/ZgAA/4EAAP//25D/////////
+        /////////////////////////////////////////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        //+22///ZgA6/2YAAP//tmb//////////////////////8////9mAGb/ZgAA/50AAP///7b/////////
+        //+dtv//ZgAA/4EAAP//25D//////////////////////+f///+BZpD/gTo6//+2kP///////////522
+        //9mAAD/gQAA///bkP//////////////////////5////4FmkP+BOjr//7aQ////////////ZgAA/2YA
+        AP9mAAD/ZgAA/////////////////7bb//9mADr/ZgAA//+2Zv///////////+f///+dttv/Zjo6/2YA
+        AP+BAAD//9uQ/////////////////7bb//9mADr/ZgAA/7Y6AP///9v////////////n////ZjqQ/2YA
+        AP9mAAD//7Zm////////////ttv//2YAOv9mAAD/tjoA////2////////////+f///9mOpD/ZgAA/2YA
+        AP//tmb///////////9mAAD/ZgAA/2YAAP9mAAD/////////////////ttv//2YAOv9mAAD/ZgAA/2YA
+        AP9mAAD/ZgAA/2YAAP9mAAD/nToA///btv///////////////////////////522//9mADr/ZgAA/2YA
+        AP+dOjr/gTpm/2YAAP9mAAD/ZgAA/+eQOv//////////////////////nbb//2YAOv9mAAD/ZgAA/506
+        Ov+BOmb/ZgAA/2YAAP9mAAD/55A6/////////////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        ///n////z7a2/8+2tv/Ptrb/z7a2/8+2tv/Ptrb/57a2////2///////////////////////////////
+        /////////////+fb//+dkLb/gTo6/4E6Ov+BOjr/gTo6/8+QZv//29v/////////////////////////
+        ////////59v//52Qtv+BOjr/gTo6/4E6Ov+BOjr/z5Bm///b2///////////////////////ZgAA/2YA
+        AP9mAAD/ZgAA////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        //////////////////9mAAD/ZgAA/2YAAP9mAAD/////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////ZgAA/2YA
+        AP9mAAD/ZgAA////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        //////////////////9mAAD/ZgAA/2YAAP9mAAD/////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////ZgAA/2YA
+        AP9mAAD/ZgAA////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        //////////////////9mAAD/ZgAA/2YAAP9mAAD/////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////ZgAA/2YA
+        AP9mAAD/ZgAA////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        //////////////////9mAAD/ZgAA/2YAAP9mAAD/////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////2YAAP9mAAD/ZgAA/2YAAP//////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////ZgAA/2YA
+        AP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YA
+        AP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YA
+        AP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YA
+        AP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YA
+        AP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YA
+        AP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YA
+        AP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/ZgAA/2YAAP9mAAD/AAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>                                                                                    HỆ THỐNG QUẢN LÝ SINH VIÊN VÀ THEO VẾT SAU KHI RA TRƯỜNG</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

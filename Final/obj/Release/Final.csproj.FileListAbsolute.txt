@@ -1,0 +1,26 @@
+C:\Users\thanh\AppData\Local\Temporary Projects\Final\obj\Release\ResolveAssemblyReference.cache
+C:\Users\thanh\AppData\Local\Temporary Projects\Final\obj\Release\Final.AddStudent.resources
+C:\Users\thanh\AppData\Local\Temporary Projects\Final\obj\Release\Final.EditStudent.resources
+C:\Users\thanh\AppData\Local\Temporary Projects\Final\obj\Release\Final.Home.resources
+C:\Users\thanh\AppData\Local\Temporary Projects\Final\obj\Release\Final.Introduction.resources
+C:\Users\thanh\AppData\Local\Temporary Projects\Final\obj\Release\Final.LoiTuVan.resources
+C:\Users\thanh\AppData\Local\Temporary Projects\Final\obj\Release\Final.Properties.Resources.resources
+C:\Users\thanh\AppData\Local\Temporary Projects\Final\obj\Release\Final.QuanLySV.resources
+C:\Users\thanh\AppData\Local\Temporary Projects\Final\obj\Release\Final.ShowStudent.resources
+C:\Users\thanh\AppData\Local\Temporary Projects\Final\obj\Release\Final.TuVan.resources
+C:\Users\thanh\AppData\Local\Temporary Projects\Final\obj\Release\Final.csproj.GenerateResource.Cache
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Release\ResolveAssemblyReference.cache
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Release\Final.AddStudent.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Release\Final.EditStudent.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Release\Final.Home.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Release\Final.Introduction.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Release\Final.LoiTuVan.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Release\Final.Properties.Resources.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Release\Final.QuanLySV.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Release\Final.ShowStudent.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Release\Final.TuVan.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Release\Final.csproj.GenerateResource.Cache
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\bin\Release\Final.exe
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\bin\Release\Final.pdb
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Release\Final.exe
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Release\Final.pdb

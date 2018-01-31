@@ -1,0 +1,31 @@
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\bin\Debug\Final.exe
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\bin\Debug\Final.pdb
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Debug\Final.AddStudent.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Debug\Final.EditStudent.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Debug\Final.Home.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Debug\Final.Introduction.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Debug\Final.LoiTuVan.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Debug\Final.Properties.Resources.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Debug\Final.QuanLySV.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Debug\Final.ShowStudent.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Debug\Final.TuVan.resources
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Debug\Final.csproj.GenerateResource.Cache
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Debug\Final.exe
+C:\Users\thanh\Documents\Visual Studio 2008\Projects\Final\Final\obj\Debug\Final.pdb
+C:\Users\Binh.HX\Downloads\Final\Final\obj\Debug\Final.exe
+C:\Users\Binh.HX\Downloads\Final\Final\obj\Debug\Final.pdb
+C:\Users\Binh.HX\Downloads\Final\Final\bin\Debug\Final.exe
+C:\Users\Binh.HX\Downloads\Final\Final\bin\Debug\Final.pdb
+C:\Users\Binh.HX\Downloads\Final\Final\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\Binh.HX\Downloads\Final\Final\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Binh.HX\Downloads\Final\Final\obj\Debug\Final.AddStudent.resources
+C:\Users\Binh.HX\Downloads\Final\Final\obj\Debug\Final.EditStudent.resources
+C:\Users\Binh.HX\Downloads\Final\Final\obj\Debug\Final.Home.resources
+C:\Users\Binh.HX\Downloads\Final\Final\obj\Debug\Final.Introduction.resources
+C:\Users\Binh.HX\Downloads\Final\Final\obj\Debug\Final.LoiTuVan.resources
+C:\Users\Binh.HX\Downloads\Final\Final\obj\Debug\Final.Properties.Resources.resources
+C:\Users\Binh.HX\Downloads\Final\Final\obj\Debug\Final.QuanLySV.resources
+C:\Users\Binh.HX\Downloads\Final\Final\obj\Debug\Final.ShowStudent.resources
+C:\Users\Binh.HX\Downloads\Final\Final\obj\Debug\Final.TuVan.resources
+C:\Users\Binh.HX\Downloads\Final\Final\obj\Debug\Final.csproj.GenerateResource.Cache
