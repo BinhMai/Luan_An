@@ -47,6 +47,23 @@ namespace Final
             intro.Show();
         }
 
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDbCung_Click(object sender, EventArgs e)
+        {
+            TuVan Tv = new TuVan();
+            this.Visible = false;
+            Tv.ShowDialog();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
        
     }
 }
