@@ -54,7 +54,7 @@ namespace Final
 
         private void btnDbCung_Click(object sender, EventArgs e)
         {
-            TuVan Tv = new TuVan();
+            DuBaoCung Tv = new DuBaoCung();
             this.Visible = false;
             Tv.ShowDialog();
         }
