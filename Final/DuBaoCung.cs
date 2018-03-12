@@ -17,5 +17,15 @@ namespace Final
         {
             InitializeComponent();
         }
+        public void GUI_Truong_Load(object sender, EventArgs e)
+        {
+            dgvSchools.DataSource = dal_sv.getSinhVien(); // get sinh vien
+        }
+        private void btnQuayLai_Click(object sender, EventArgs e)
+        {
+            Home h = new Home();
+            h.Show();
+            this.Visible = false;
+        }
     }
 }
