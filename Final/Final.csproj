@@ -58,6 +58,7 @@
     <Compile Include="AddStudent.designer.cs">
       <DependentUpon>AddStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Business\DAL_Truong.cs" />
     <Compile Include="Business\DAL_SinhVien.cs" />
     <Compile Include="Business\DTO_SinhVien.cs" />
     <Compile Include="ConnectDB\DBConnect.cs" />

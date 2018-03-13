@@ -12,14 +12,14 @@ namespace Final
 {
     public partial class DuBaoCung : Form
     {
-        DAL_SinhVien dal_sv = new DAL_SinhVien();
+        DAL_Truong dal_truong = new DAL_Truong();
         public DuBaoCung()
         {
             InitializeComponent();
         }
         public void GUI_Truong_Load(object sender, EventArgs e)
         {
-            dgvSchools.DataSource = dal_sv.getSinhVien(); // get sinh vien
+            dgvSchools.DataSource = dal_truong.getTruong();
         }
         private void btnQuayLai_Click(object sender, EventArgs e)
         {

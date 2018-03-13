@@ -44,8 +44,8 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.ten_truong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dia_chi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTruong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chi_tieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ti_le = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.du_bao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,8 +82,8 @@
             this.dgvSchools.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSchools.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSchools.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ten_truong,
-            this.dia_chi,
+            this.TenTruong,
+            this.DiaChi,
             this.chi_tieu,
             this.ti_le,
             this.du_bao});
@@ -215,26 +215,26 @@
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
             // 
-            // ten_truong
+            // TenTruong
             // 
-            this.ten_truong.DataPropertyName = "ten_truong";
+            this.TenTruong.DataPropertyName = "TenTruong";
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ten_truong.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ten_truong.HeaderText = "Tên Trường";
-            this.ten_truong.MinimumWidth = 10;
-            this.ten_truong.Name = "ten_truong";
-            this.ten_truong.ReadOnly = true;
-            this.ten_truong.Width = 300;
+            this.TenTruong.DefaultCellStyle = dataGridViewCellStyle2;
+            this.TenTruong.HeaderText = "Tên Trường";
+            this.TenTruong.MinimumWidth = 10;
+            this.TenTruong.Name = "TenTruong";
+            this.TenTruong.ReadOnly = true;
+            this.TenTruong.Width = 300;
             // 
-            // dia_chi
+            // DiaChi
             // 
-            this.dia_chi.DataPropertyName = "dia_chi";
+            this.DiaChi.DataPropertyName = "DiaChi";
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dia_chi.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dia_chi.HeaderText = "Địa chỉ";
-            this.dia_chi.Name = "dia_chi";
-            this.dia_chi.ReadOnly = true;
-            this.dia_chi.Width = 300;
+            this.DiaChi.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            this.DiaChi.Width = 300;
             // 
             // chi_tieu
             // 
@@ -306,8 +306,8 @@
         private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ten_truong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dia_chi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTruong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn chi_tieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn ti_le;
         private System.Windows.Forms.DataGridViewTextBoxColumn du_bao;

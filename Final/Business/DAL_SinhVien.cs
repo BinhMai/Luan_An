@@ -14,7 +14,7 @@ namespace FinalProject
         public DataTable getSinhVien()
         {
             //string sql = "SELECT ma_sinh_vien, ho_ten, ngay_sinh, dan_toc, gioi_tinh, hoc_luc, nganh_dao_tao.ten_nganh as ten_nganh_dao_tao, nganh_nghe as ten_nganh_lam_viec, khoa_hoc.khoa as khoa_hoc FROM sinh_vien Inner Join nganh_dao_tao on nganh_dao_tao.ma_nganh = sinh_vien.ma_nganh inner join khoa_hoc on khoa_hoc.khoa = sinh_vien.khoa where sinh_vien.nganh_nghe IS NULL";
-            SqlDataAdapter da = new SqlDataAdapter("SELECT ma_sinh_vien, ho_ten, ngay_sinh, gioi_tinh, dan_toc, que_quan, ma_khoa_hoc, hoc_luc, nganh_dao_tao.ten_nganh as ten_nganh_dao_tao, nganh_nghe.ten_nganh as ten_nganh_lam_viec, ten_co_quan FROM sinh_vien Inner Join nganh_dao_tao on nganh_dao_tao.ma_nganh_dao_tao = sinh_vien.ma_nganh_dao_tao inner join nganh_nghe on (nganh_nghe.ma_nganh_nghe = sinh_vien.ma_nganh_nghe)", _conn);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT ma_sinh_vien, ho_ten, ngay_sinh, gioi_tinh, dan_toc, que_quan, ma_khoa_hoc, hoc_luc, chuyennganhdaotao.TenChuyenNganh as ten_nganh_dao_tao, nghenghiepsinhvien.ten_nganh as ten_nganh_lam_viec, ten_co_quan FROM sinhviendilam2 Inner Join chuyennganhdaotao on chuyennganhdaotao.MaNganh = sinhviendilam2.ma_nganh_dao_tao inner join nghenghiepsinhvien on (nghenghiepsinhvien.ma_nganh_nghe = sinhviendilam2.ma_nghe)", _conn);
            
             DataTable dtSinhVien = new DataTable();
             da.Fill(dtSinhVien);

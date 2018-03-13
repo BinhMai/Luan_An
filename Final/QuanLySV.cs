@@ -81,7 +81,7 @@ namespace Final
         {
             DBConnect db = new DBConnect();
             db._conn.Open();
-            string SQL = string.Format("Select ten_nganh from nganh_dao_tao");
+            string SQL = string.Format("Select TenChuyenNganh from chuyennganhdaotao");
             // Command
             SqlCommand cmd = new SqlCommand(SQL, db._conn);
             SqlDataReader data = cmd.ExecuteReader();
