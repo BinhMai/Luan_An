@@ -172,7 +172,7 @@ namespace Final
             DBConnect db = new DBConnect();
             db._conn.Open();
             //string union_sql = "SELECT ma_sinh_vien, ho_ten, ngay_sinh, dan_toc, gioi_tinh, hoc_luc, nganh_dao_tao.ten_nganh as ten_nganh_dao_tao, nganh_nghe as ten_nganh_lam_viec, khoa_hoc.khoa as khoa_hoc FROM sinh_vien Inner Join nganh_dao_tao on nganh_dao_tao.ma_nganh = sinh_vien.ma_nganh inner join khoa_hoc on khoa_hoc.khoa = sinh_vien.khoa where sinh_vien.nganh_nghe IS NULL";
-            string sql = "SELECT ma_sinh_vien, ho_ten, ngay_sinh, gioi_tinh, dan_toc, que_quan, ma_khoa_hoc, hoc_luc, nganh_dao_tao.ten_nganh as ten_nganh_dao_tao, nganh_nghe.ten_nganh as ten_nganh_lam_viec, ten_co_quan FROM sinh_vien Inner Join nganh_dao_tao on nganh_dao_tao.ma_nganh_dao_tao = sinh_vien.ma_nganh_dao_tao inner join nganh_nghe on (nganh_nghe.ma_nganh_nghe = sinh_vien.ma_nganh_nghe) AND 1 = 1";
+            string sql = "SELECT ma_sinh_vien, ho_ten, ngay_sinh, gioi_tinh, dan_toc, que_quan, ma_khoa_hoc, hoc_luc, chuyennganhdaotao.TenChuyenNganh as ten_nganh_dao_tao, nghenghiepsinhvien.ten_nganh as ten_nganh_lam_viec, ten_co_quan FROM sinhviendilam2 Inner Join chuyennganhdaotao on chuyennganhdaotao.MaNganh = sinhviendilam2.ma_nganh_dao_tao inner join nghenghiepsinhvien on (nghenghiepsinhvien.ma_nganh_nghe = sinhviendilam2.ma_nghe) AND 1 = 1";
             string gioitinh = "";
             if(cbbGioiTinh.Text == ""){
                 gioitinh = "";
@@ -241,16 +241,16 @@ namespace Final
             {
                 if(vieclam == "Cả hai")
                 {
-                    sql += " AND (nganh_nghe.ten_nganh IS NULL OR nganh_nghe.ten_nganh IS NOT NULL)";
+                    sql += " AND (nghenghiepsinhvien.ten_nganh IS NULL OR nghenghiepsinhvien.ten_nganh IS NOT NULL)";
                 }
                 else if(vieclam == "Đã có việc làm")
                 {
-                    sql += " AND nganh_nghe.ten_nganh IS NOT NULL";
+                    sql += " AND nghenghiepsinhvien.ten_nganh IS NOT NULL";
 
                 }
                 else if(vieclam == "Chưa có việc làm")
                 {
-                    sql += " AND nganh_nghe.ten_nganh IS NULL";
+                    sql += " AND nghenghiepsinhvien.ten_nganh IS NULL";
                 }
             }
 
@@ -274,14 +274,14 @@ namespace Final
                 string[] nganh_dao_tao = s.Split(delimiterChars);
                 if (nganh_dao_tao.Length == 1)
                 {
-                    sql += " AND nganh_dao_tao.ten_nganh = N'" + nganh_dao_tao[0] + "'";
+                    sql += " AND chuyennganhdaotao.TenChuyenNganh = N'" + nganh_dao_tao[0] + "'";
                 }
                 else
                 {
-                    sql += " AND (nganh_dao_tao.ten_nganh = N'" + nganh_dao_tao[0] + "'";
+                    sql += " AND (chuyennganhdaotao.TenChuyenNganh = N'" + nganh_dao_tao[0] + "'";
                     for (int i = 1; i < nganh_dao_tao.Length; i++)
                     {
-                        sql += " OR nganh_dao_tao.ten_nganh = N'" + nganh_dao_tao[i] + "'";
+                        sql += " OR chuyennganhdaotao.TenChuyenNganh = N'" + nganh_dao_tao[i] + "'";
                     }
                     sql += ")";
                 }
@@ -511,7 +511,7 @@ namespace Final
 
 
                             connect._conn.Open();
-                            SqlCommand nganhDaoTao = new SqlCommand("select * from nganh_dao_tao where nganh_dao_tao.ma_nganh_dao_tao = N'" + ma_nganh_dao_tao + "'", connect._conn);
+                            SqlCommand nganhDaoTao = new SqlCommand("select * from chuyennganhdaotao where chuyennganhdaotao.ma_nganh_dao_tao = N'" + ma_nganh_dao_tao + "'", connect._conn);
                             SqlDataReader dataNganhDT = nganhDaoTao.ExecuteReader();
                             if (dataNganhDT.HasRows)
                             {
@@ -521,7 +521,7 @@ namespace Final
                             {
                                 connect._conn.Close();
                                 connect._conn.Open();
-                                SqlCommand queryDaoTao = new SqlCommand("Insert into nganh_dao_tao(ma_nganh_dao_tao, ten_nganh) values('" + ma_nganh_dao_tao + "',N'" + ten_nganh_dao_tao + "')", connect._conn);
+                                SqlCommand queryDaoTao = new SqlCommand("Insert into chuyennganhdaotao(ma_nganh_dao_tao, ten_nganh) values('" + ma_nganh_dao_tao + "',N'" + ten_nganh_dao_tao + "')", connect._conn);
                                 queryDaoTao.ExecuteNonQuery();
                                 connect._conn.Close();
                             }

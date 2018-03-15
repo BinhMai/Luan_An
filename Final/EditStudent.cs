@@ -36,11 +36,11 @@ namespace Final
             cbbKhoa.DataSource = dal_sv.getDataForSelectBox("khoa_hoc");
 
             cbbCoQuan.ValueMember = "id";
-            cbbCoQuan.DisplayMember = "ten_co_quan";
+            cbbCoQuan.DisplayMember = "TenCoQuan";
             cbbCoQuan.DataSource = dal_sv.getDataForSelectBox("co_quan");
 
             cbbNganh.ValueMember = "id";
-            cbbNganh.DisplayMember = "ten_nganh";
+            cbbNganh.DisplayMember = "TenChuyenNganh";
             cbbNganh.DataSource = dal_sv.getDataForSelectBox("nganh_dao_tao");
 
             cbbNghe.ValueMember = "id";

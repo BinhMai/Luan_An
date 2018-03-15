@@ -13,7 +13,7 @@ namespace FinalProject
     {
         public DataTable getTruong()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT TenTruong, DiaChi FROM cosodaotao", _conn);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT TenTruong, DiaChi,cosotheonganh.ChiTieu as chi_tieu FROM cosodaotao Inner Join cosotheonganh on cosotheonganh.MaTruong = cosodaotao.MaTruong", _conn);
            
             DataTable dtTruong = new DataTable();
             da.Fill(dtTruong);

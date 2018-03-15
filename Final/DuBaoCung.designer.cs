@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DuBaoCung));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.dgvSchools = new System.Windows.Forms.DataGridView();
+            this.TenTruong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chi_tieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ti_le = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.du_bao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnXem = new System.Windows.Forms.Button();
@@ -44,11 +48,9 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.TenTruong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chi_tieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ti_le = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.du_bao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tiLeMucLuong = new System.Windows.Forms.Label();
+            this.mucLuong = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchools)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,19 +69,12 @@
             this.label8.Text = "DỰ BÁO CUNG";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(15, 189);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(954, 353);
-            this.panel2.TabIndex = 23;
-            // 
             // dgvSchools
             // 
             this.dgvSchools.AllowUserToAddRows = false;
             this.dgvSchools.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dgvSchools.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dgvSchools.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
             this.dgvSchools.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSchools.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TenTruong,
@@ -92,6 +87,54 @@
             this.dgvSchools.ReadOnly = true;
             this.dgvSchools.Size = new System.Drawing.Size(954, 353);
             this.dgvSchools.TabIndex = 0;
+            // 
+            // TenTruong
+            // 
+            this.TenTruong.DataPropertyName = "TenTruong";
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenTruong.DefaultCellStyle = dataGridViewCellStyle27;
+            this.TenTruong.HeaderText = "Tên Trường";
+            this.TenTruong.MinimumWidth = 10;
+            this.TenTruong.Name = "TenTruong";
+            this.TenTruong.ReadOnly = true;
+            this.TenTruong.Width = 300;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.DiaChi.DefaultCellStyle = dataGridViewCellStyle28;
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            this.DiaChi.Width = 300;
+            // 
+            // chi_tieu
+            // 
+            this.chi_tieu.DataPropertyName = "chi_tieu";
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chi_tieu.DefaultCellStyle = dataGridViewCellStyle29;
+            this.chi_tieu.FillWeight = 70F;
+            this.chi_tieu.HeaderText = "Chỉ tiêu";
+            this.chi_tieu.Name = "chi_tieu";
+            this.chi_tieu.ReadOnly = true;
+            this.chi_tieu.Width = 110;
+            // 
+            // ti_le
+            // 
+            this.ti_le.DataPropertyName = "ti_le";
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ti_le.DefaultCellStyle = dataGridViewCellStyle30;
+            this.ti_le.HeaderText = "Tỉ lệ %";
+            this.ti_le.Name = "ti_le";
+            this.ti_le.ReadOnly = true;
+            // 
+            // du_bao
+            // 
+            this.du_bao.DataPropertyName = "du_bao";
+            this.du_bao.HeaderText = "Dự báo";
+            this.du_bao.Name = "du_bao";
+            this.du_bao.ReadOnly = true;
             // 
             // label1
             // 
@@ -215,66 +258,53 @@
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
             // 
-            // TenTruong
+            // tiLeMucLuong
             // 
-            this.TenTruong.DataPropertyName = "TenTruong";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TenTruong.DefaultCellStyle = dataGridViewCellStyle2;
-            this.TenTruong.HeaderText = "Tên Trường";
-            this.TenTruong.MinimumWidth = 10;
-            this.TenTruong.Name = "TenTruong";
-            this.TenTruong.ReadOnly = true;
-            this.TenTruong.Width = 300;
+            this.tiLeMucLuong.AutoSize = true;
+            this.tiLeMucLuong.BackColor = System.Drawing.Color.Transparent;
+            this.tiLeMucLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tiLeMucLuong.Location = new System.Drawing.Point(671, 490);
+            this.tiLeMucLuong.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.tiLeMucLuong.Name = "tiLeMucLuong";
+            this.tiLeMucLuong.Size = new System.Drawing.Size(94, 24);
+            this.tiLeMucLuong.TabIndex = 74;
+            this.tiLeMucLuong.Text = "sinh viên";
             // 
-            // DiaChi
+            // mucLuong
             // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.DiaChi.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.ReadOnly = true;
-            this.DiaChi.Width = 300;
+            this.mucLuong.FormattingEnabled = true;
+            this.mucLuong.Location = new System.Drawing.Point(393, 486);
+            this.mucLuong.Name = "mucLuong";
+            this.mucLuong.Size = new System.Drawing.Size(269, 21);
+            this.mucLuong.TabIndex = 73;
             // 
-            // chi_tieu
+            // label14
             // 
-            this.chi_tieu.DataPropertyName = "chi_tieu";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chi_tieu.DefaultCellStyle = dataGridViewCellStyle4;
-            this.chi_tieu.FillWeight = 70F;
-            this.chi_tieu.HeaderText = "Chỉ tiêu";
-            this.chi_tieu.Name = "chi_tieu";
-            this.chi_tieu.ReadOnly = true;
-            this.chi_tieu.Width = 110;
-            // 
-            // ti_le
-            // 
-            this.ti_le.DataPropertyName = "ti_le";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ti_le.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ti_le.HeaderText = "Tỉ lệ %";
-            this.ti_le.Name = "ti_le";
-            this.ti_le.ReadOnly = true;
-            // 
-            // du_bao
-            // 
-            this.du_bao.DataPropertyName = "du_bao";
-            this.du_bao.HeaderText = "Dự báo";
-            this.du_bao.Name = "du_bao";
-            this.du_bao.ReadOnly = true;
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label14.Location = new System.Drawing.Point(257, 490);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(111, 20);
+            this.label14.TabIndex = 72;
+            this.label14.Text = "Dự báo cung";
             // 
             // DuBaoCung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Final.Properties.Resources._8;
+            this.BackgroundImage = global::Final.Properties.Resources._7;
             this.ClientSize = new System.Drawing.Size(984, 612);
             this.ControlBox = false;
+            this.Controls.Add(this.tiLeMucLuong);
+            this.Controls.Add(this.mucLuong);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.dgvSchools);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnXem);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnQuayLai);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnSua);
@@ -301,7 +331,6 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnQuayLai;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvSchools;
         private System.Windows.Forms.Button btnXem;
         private System.Windows.Forms.Button btnLamMoi;
@@ -311,5 +340,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn chi_tieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn ti_le;
         private System.Windows.Forms.DataGridViewTextBoxColumn du_bao;
+        public System.Windows.Forms.Label tiLeMucLuong;
+        public System.Windows.Forms.ComboBox mucLuong;
+        public System.Windows.Forms.Label label14;
     }
 }

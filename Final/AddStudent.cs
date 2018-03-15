@@ -26,7 +26,7 @@ namespace Final
             cbbKhoa.DataSource = dal_sv.getDataForSelectBox("khoa_hoc");
 
             cbbNganh.ValueMember = "id";
-            cbbNganh.DisplayMember = "ten_nganh";
+            cbbNganh.DisplayMember = "TenChuyenNganh";
             cbbNganh.DataSource = dal_sv.getDataForSelectBox("nganh_dao_tao");
 
             cbbNghe.ValueMember = "id";
@@ -34,7 +34,7 @@ namespace Final
             cbbNghe.DataSource = dal_sv.getDataForSelectBox("nganh_nghe");
 
             cbbCoQuan.ValueMember = "id";
-            cbbCoQuan.DisplayMember = "ten_co_quan";
+            cbbCoQuan.DisplayMember = "TenCoQuan";
             cbbCoQuan.DataSource = dal_sv.getDataForSelectBox("co_quan");
         }
 
@@ -55,7 +55,7 @@ namespace Final
 
                 if (drvNganh != null)
                 {
-                    nganh = drvNganh.Row["ma_nganh_dao_tao"] as string;
+                    nganh = drvNganh.Row["TenChuyenNganh"] as string;
                 }
 
                 //Nghe
@@ -84,7 +84,7 @@ namespace Final
 
                 if (drvCoquan != null)
                 {
-                    coquan = drvCoquan.Row["ten_co_quan"] as string;
+                    coquan = drvCoquan.Row["TenCoQuan"] as string;
                 }
 
                 //Khoa

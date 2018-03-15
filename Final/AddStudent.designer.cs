@@ -221,7 +221,7 @@
             // 
             // cbbNganh
             // 
-            this.cbbNganh.DisplayMember = "Nam";
+            this.cbbNganh.DisplayMember = "TenChuyenNganh";
             this.cbbNganh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.cbbNganh.FormattingEnabled = true;
             this.cbbNganh.Location = new System.Drawing.Point(697, 327);
@@ -229,7 +229,6 @@
             this.cbbNganh.Name = "cbbNganh";
             this.cbbNganh.Size = new System.Drawing.Size(212, 24);
             this.cbbNganh.TabIndex = 57;
-            this.cbbNganh.ValueMember = "Nam";
             // 
             // label6
             // 

@@ -24,10 +24,10 @@ namespace FinalProject
         public DataTable getDataForSelectBox(string str)
         {
             DataTable dtSinhVien = new DataTable();
-           
+
             if (str == "nganh_dao_tao")
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct ma_nganh_dao_tao, ten_nganh from nganh_dao_tao", _conn);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct MaNganh, TenChuyenNganh from chuyennganhdaotao", _conn);
                 da.Fill(dtSinhVien);
                 dtSinhVien.Columns.Add("Column1", typeof(string));
                 DataRow dr;
@@ -37,7 +37,7 @@ namespace FinalProject
             }
             else if (str == "nganh_nghe")
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct ma_nganh_nghe, ten_nganh from nganh_nghe", _conn);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct ma_nganh_nghe, ten_nganh from nghenghiepsinhvien", _conn);
                 da.Fill(dtSinhVien);
                 dtSinhVien.Columns.Add("Column1", typeof(string));
                 DataRow dr;
@@ -47,7 +47,7 @@ namespace FinalProject
             }
             else if (str == "khoa_hoc")
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct ma_khoa_hoc from khoa_hoc", _conn);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct ma_khoa_hoc from khoahocsinhvien", _conn);
                 da.Fill(dtSinhVien);
                 dtSinhVien.Columns.Add("Column1", typeof(string));
                 DataRow dr;
@@ -57,7 +57,7 @@ namespace FinalProject
             }
             else if (str == "co_quan")
             {
-                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct ten_co_quan from co_quan", _conn);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT distinct TenCoQuan from donvilamviec", _conn);
                 da.Fill(dtSinhVien);
                 dtSinhVien.Columns.Add("Column1", typeof(string));
                 DataRow dr;
@@ -72,13 +72,15 @@ namespace FinalProject
 
         public bool themSinhVien(DTO_SinhVien sv)
         {
+            System.Console.WriteLine(sv);
+            System.Console.ReadLine();
             try
             {
                 // Ket noi
                 _conn.Open();
 
                 // Query string
-                string SQL = string.Format("INSERT INTO sinh_vien(ma_sinh_vien, ho_ten, ngay_sinh, gioi_tinh, dan_toc, que_quan, ma_khoa_hoc, hoc_luc, ma_nganh_dao_tao, ma_nganh_nghe, ten_co_quan) VALUES ('{0}',N'{1}','{2}',N'{3}',N'{4}',N'{5}','{6}',N'{7}',N'{8}',N'{9}',N'{10}')", sv.MA_SV, sv.HO_TEN, sv.NGAY_SINH,sv.GIOI_TINH, sv.DAN_TOC, sv.QUE_QUAN,sv.KHOA, sv.HOC_LUC, sv.MA_NGANH, sv.NGANH_NGHE, sv.TEN_CO_QUAN);
+                string SQL = string.Format("INSERT INTO sinhviendilam2(ma_sinh_vien, ho_ten, ngay_sinh, gioi_tinh, dan_toc, que_quan, ma_khoa_hoc, hoc_luc, ma_nganh_dao_tao, ma_nghe, ten_co_quan) VALUES ('{0}',N'{1}','{2}',N'{3}',N'{4}',N'{5}','{6}',N'{7}',N'{8}',N'{9}',N'{10}')", sv.MA_SV, sv.HO_TEN, sv.NGAY_SINH,sv.GIOI_TINH, sv.DAN_TOC, sv.QUE_QUAN,sv.KHOA, sv.HOC_LUC, sv.MA_NGANH, sv.NGANH_NGHE, sv.TEN_CO_QUAN);
                 // Command
                 SqlCommand cmd = new SqlCommand(SQL, _conn);
                 // Query và kiểm tra

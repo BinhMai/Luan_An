@@ -34,10 +34,10 @@
             this.btnDbCung = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnHuongDan = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCung = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -90,14 +90,6 @@
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Final.Properties.Resources.title;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
             // btnHuongDan
             // 
             this.btnHuongDan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(105)))), ((int)(((byte)(169)))));
@@ -114,6 +106,18 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Name = "label1";
+            // 
+            // btnCung
+            // 
+            resources.ApplyResources(this.btnCung, "btnCung");
+            this.btnCung.Name = "btnCung";
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // Home
             // 
@@ -143,7 +147,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
+
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnQuanLy;
@@ -152,6 +156,7 @@
         private System.Windows.Forms.Button btnHuongDan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCung;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
