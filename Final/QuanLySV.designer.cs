@@ -459,7 +459,7 @@
             this.label1.Size = new System.Drawing.Size(358, 13);
             this.label1.TabIndex = 32;
             this.label1.Text = "                                                                                 " +
-    "                                    ";
+                "                                    ";
             // 
             // button1
             // 
@@ -488,7 +488,7 @@
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
             this.btnLamMoi.Image = global::Final.Properties.Resources.refresh;
             this.btnLamMoi.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnLamMoi.Location = new System.Drawing.Point(359, 560);
+            this.btnLamMoi.Location = new System.Drawing.Point(236, 560);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(109, 41);
@@ -507,7 +507,7 @@
             this.btnXem.ForeColor = System.Drawing.Color.White;
             this.btnXem.Image = global::Final.Properties.Resources.view;
             this.btnXem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnXem.Location = new System.Drawing.Point(862, 560);
+            this.btnXem.Location = new System.Drawing.Point(739, 560);
             this.btnXem.Margin = new System.Windows.Forms.Padding(2);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(109, 41);
@@ -545,7 +545,7 @@
             this.btnQuayLai.ForeColor = System.Drawing.Color.White;
             this.btnQuayLai.Image = global::Final.Properties.Resources._return;
             this.btnQuayLai.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnQuayLai.Location = new System.Drawing.Point(220, 560);
+            this.btnQuayLai.Location = new System.Drawing.Point(97, 560);
             this.btnQuayLai.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuayLai.Name = "btnQuayLai";
             this.btnQuayLai.Size = new System.Drawing.Size(119, 41);
@@ -564,7 +564,7 @@
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = global::Final.Properties.Resources.add;
             this.btnThem.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnThem.Location = new System.Drawing.Point(485, 560);
+            this.btnThem.Location = new System.Drawing.Point(362, 560);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(109, 41);
@@ -583,7 +583,7 @@
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Image = global::Final.Properties.Resources.edit;
             this.btnSua.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSua.Location = new System.Drawing.Point(620, 560);
+            this.btnSua.Location = new System.Drawing.Point(497, 560);
             this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(107, 41);
@@ -602,7 +602,7 @@
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = global::Final.Properties.Resources.delete;
             this.btnXoa.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnXoa.Location = new System.Drawing.Point(743, 560);
+            this.btnXoa.Location = new System.Drawing.Point(620, 560);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(105, 41);

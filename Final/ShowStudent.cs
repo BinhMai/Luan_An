@@ -85,7 +85,7 @@ namespace Final
 
         public void setNganh(string value)
         {
-            cbbNganh.SelectedIndex = cbbNganh.FindStringExact(value);
+            cbbNganh.Text = value;
         }
 
         public void setViecLam(string value)
@@ -100,7 +100,7 @@ namespace Final
 
         public void setCoQuan(string value)
         {
-            cbbCoQuan.SelectedIndex = cbbCoQuan.FindStringExact(value);
+            cbbCoQuan.Text = value;
         }
 
         private void btnQuayLai_Click_1(object sender, EventArgs e)

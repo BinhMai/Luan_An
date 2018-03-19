@@ -112,7 +112,7 @@ namespace FinalProject
                 _conn.Open();
 
                 // Query string
-                string SQL = string.Format("UPDATE sinh_vien SET ma_sinh_vien= '{0}', ho_ten = N'{1}', ngay_sinh='{2}', gioi_tinh = N'{3}', dan_toc=N'{4}', que_quan=N'{5}', ma_khoa_hoc = '{6}', hoc_luc = N'{7}', ma_nganh_dao_tao = '{8}', ma_nganh_nghe = '{9}',  ten_co_quan = N'{10}' WHERE ma_sinh_vien = '{11}'", sv.MA_SV, sv.HO_TEN, sv.NGAY_SINH, sv.GIOI_TINH, sv.DAN_TOC, sv.QUE_QUAN, sv.KHOA, sv.HOC_LUC, sv.MA_NGANH, sv.NGANH_NGHE, sv.TEN_CO_QUAN, sv.MA_SV);
+                string SQL = string.Format("UPDATE sinhviendilam2 SET ma_sinh_vien= '{0}', ho_ten = N'{1}', ngay_sinh='{2}', gioi_tinh = N'{3}', dan_toc=N'{4}', que_quan=N'{5}', ma_khoa_hoc = '{6}', hoc_luc = N'{7}', ma_nganh_dao_tao = '{8}', ma_nghe = '{9}',  ten_co_quan = N'{10}' WHERE ma_sinh_vien = '{11}'", sv.MA_SV, sv.HO_TEN, sv.NGAY_SINH, sv.GIOI_TINH, sv.DAN_TOC, sv.QUE_QUAN, sv.KHOA, sv.HOC_LUC, sv.MA_NGANH, sv.NGANH_NGHE, sv.TEN_CO_QUAN, sv.MA_SV);
                 // Command
                 SqlCommand cmd = new SqlCommand(SQL, _conn);
 
@@ -144,7 +144,7 @@ namespace FinalProject
                 _conn.Open();
 
                 // Query string - vì xóa chỉ cần ID nên chúng ta ko cần 1 DTO, ID là đủ
-                string SQL = string.Format("DELETE FROM sinh_vien WHERE ma_sinh_vien = '{0}'", SV_ID);
+                string SQL = string.Format("DELETE FROM sinhviendilam2 WHERE ma_sinh_vien = '{0}'", SV_ID);
 
                 // Command
                 SqlCommand cmd = new SqlCommand(SQL, _conn);

@@ -70,7 +70,7 @@ namespace Final
 
         public void setNgaySinh(string value)
         {
-            dateNgaysinh.Value = DateTime.Parse(value);
+            dateNgaysinh.Value = DateTime.ParseExact(value, "dd/MM/yyyy", null);
         }
 
         public void setKhoa(string value)
@@ -100,7 +100,7 @@ namespace Final
 
         public void setCoQuan(string value)
         {
-            cbbCoQuan.SelectedIndex = cbbCoQuan.FindStringExact(value);
+            cbbCoQuan.Text = value;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace Final
 
                 if (drvNganh != null)
                 {
-                    nganh = drvNganh.Row["ma_nganh_dao_tao"] as string;
+                    nganh = drvNganh.Row["MaNganh"] as string;
                 }
 
                 //Nghe
@@ -142,7 +142,7 @@ namespace Final
 
                 if (drvCoquan != null)
                 {
-                    coquan = drvCoquan.Row["ten_co_quan"] as string;
+                    coquan = drvCoquan.Row["TenCoQuan"] as string;
                 }
 
                 //Khoa

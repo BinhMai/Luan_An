@@ -55,7 +55,7 @@ namespace Final
 
                 if (drvNganh != null)
                 {
-                    nganh = drvNganh.Row["TenChuyenNganh"] as string;
+                    nganh = drvNganh.Row["MaNganh"] as string;
                 }
 
                 //Nghe
