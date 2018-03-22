@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DuBaoCung));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvSchools = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,8 +75,8 @@
             // 
             this.dgvSchools.AllowUserToAddRows = false;
             this.dgvSchools.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dgvSchools.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dgvSchools.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSchools.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSchools.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ma_truong,
@@ -258,8 +258,8 @@
             // TenTruong
             // 
             this.TenTruong.DataPropertyName = "TenTruong";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TenTruong.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenTruong.DefaultCellStyle = dataGridViewCellStyle2;
             this.TenTruong.HeaderText = "Tên Trường";
             this.TenTruong.MinimumWidth = 10;
             this.TenTruong.Name = "TenTruong";
@@ -269,8 +269,8 @@
             // DiaChi
             // 
             this.DiaChi.DataPropertyName = "DiaChi";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.DiaChi.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.DiaChi.DefaultCellStyle = dataGridViewCellStyle3;
             this.DiaChi.HeaderText = "Địa chỉ";
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.ReadOnly = true;
@@ -287,8 +287,8 @@
             // chi_tieu
             // 
             this.chi_tieu.DataPropertyName = "chi_tieu";
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chi_tieu.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chi_tieu.DefaultCellStyle = dataGridViewCellStyle4;
             this.chi_tieu.FillWeight = 70F;
             this.chi_tieu.HeaderText = "Chỉ tiêu";
             this.chi_tieu.Name = "chi_tieu";
@@ -298,8 +298,8 @@
             // ti_le
             // 
             this.ti_le.DataPropertyName = "ti_le";
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ti_le.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ti_le.DefaultCellStyle = dataGridViewCellStyle5;
             this.ti_le.HeaderText = "Tỉ lệ %";
             this.ti_le.Name = "ti_le";
             this.ti_le.ReadOnly = true;
@@ -311,6 +311,7 @@
             this.du_bao.HeaderText = "Dự báo";
             this.du_bao.Name = "du_bao";
             this.du_bao.ReadOnly = true;
+            this.du_bao.Width = 80;
             // 
             // DuBaoCung
             // 
