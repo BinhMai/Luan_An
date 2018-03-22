@@ -80,11 +80,12 @@ namespace Final
             for (int i = 0; i < dgvSchools.RowCount; i++)
             {
                 String matruong = dgvSchools.Rows[i].Cells["ma_truong"].Value.ToString();
-                if (dgvSchools.Rows[i].Cells["ti_le"].Value == null)
+                if (dgvSchools.Rows[i].Cells["chi_tieu"].Value.ToString() == "0")
                 {
                     DBConnect db = new DBConnect();
                     db._conn.Open();
-                    string SQL = string.Format("Select Nam,ChiTieu from TuyenSinh where MaTruong = '" + matruong + "'");                    
+                    string SQL = string.Format("Select Nam,ChiTieu from TuyenSinh where MaTruong = '" + matruong + "'");
+                    Console.WriteLine(SQL);
                     // Command
                     SqlCommand cmd = new SqlCommand(SQL, db._conn);
                     SqlDataReader data = cmd.ExecuteReader();
@@ -112,8 +113,13 @@ namespace Final
                     double b1 = (XY1 - X1 * Y1) / (XX1 - X1 * X1);
                     double b2 = Y1 - X1 * b1;                    
 
-                    int dubao = (int)(2020 * b1 + b2);
-                    dgvSchools.Rows[i].Cells["du_bao"].Value = dubao;    
+                    int dubao_ts = (int)(2016 * b1 + b2);
+                    dgvSchools.Rows[i].Cells["chi_tieu"].Value = dubao_ts;
+
+                    double tile =  Convert.ToDouble(dgvSchools.Rows[i].Cells["ti_le"].Value.ToString());
+                    int dubao = (int)(dubao_ts*tile)/100;
+                    dgvSchools.Rows[i].Cells["du_bao"].Value = dubao;
+
                     cung += dubao;
                 }
             }            
