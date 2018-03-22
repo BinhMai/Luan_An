@@ -29,14 +29,6 @@ namespace Final
             Ql.ShowDialog();
         }
 
-        private void btnTuVan_Click(object sender, EventArgs e)
-        {
-            TuVan Tv = new TuVan();
-            this.Visible = false;
-            Tv.ShowDialog();
-
-        }
-
         private void btnHuongDan_Click(object sender, EventArgs e)
         {
             Introduction intro = new Introduction();

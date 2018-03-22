@@ -58,6 +58,7 @@
     <Compile Include="AddStudent.designer.cs">
       <DependentUpon>AddStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Business\DTO_CT.cs" />
     <Compile Include="Business\DAL_Truong.cs" />
     <Compile Include="Business\DAL_SinhVien.cs" />
     <Compile Include="Business\DTO_SinhVien.cs" />
@@ -86,12 +87,6 @@
     <Compile Include="Introduction.designer.cs">
       <DependentUpon>Introduction.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoiTuVan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoiTuVan.designer.cs">
-      <DependentUpon>LoiTuVan.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddStudent.resx">
@@ -114,10 +109,6 @@
       <DependentUpon>Introduction.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoiTuVan.resx">
-      <DependentUpon>LoiTuVan.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -129,11 +120,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ShowStudent.resx">
       <DependentUpon>ShowStudent.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TuVan.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>TuVan1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -161,15 +147,6 @@
     </Compile>
     <Compile Include="ShowStudent.designer.cs">
       <DependentUpon>ShowStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TuVan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TuVan.Designer.cs" />
-    <Compile Include="TuVan1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TuVan.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

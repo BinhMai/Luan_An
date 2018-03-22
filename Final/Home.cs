@@ -18,7 +18,6 @@ namespace Final
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
             Application.Exit();
         }
 
@@ -27,17 +26,6 @@ namespace Final
             QuanLySV Ql = new QuanLySV();
             this.Visible = false;
             Ql.ShowDialog();
-           
-
-
-        }
-
-        private void btnTuVan_Click(object sender, EventArgs e)
-        {
-            TuVan Tv = new TuVan();
-            this.Visible = false;
-            Tv.ShowDialog();
-            
         }
 
         private void btnHuongDan_Click(object sender, EventArgs e)
@@ -58,12 +46,5 @@ namespace Final
             this.Visible = false;
             Tv.ShowDialog();
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
     }
 }
