@@ -133,28 +133,7 @@ namespace Final
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            Excel.Application xlApp = new Excel.Application();
-            Excel.Workbook xlWorkBook;
-            Excel.Worksheet xlWorkSheet;
-            Excel.Range range;
-            object misValue = System.Reflection.Missing.Value;
-
-            xlWorkBook = xlApp.Workbooks.Open(@"" + pathFile, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
-            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-            range = xlWorkSheet.UsedRange;
-            int rw = range.Rows.Count;
-
-            xlWorkSheet.Cells[rw+1, 1] = "yyyyyyy";
-            xlWorkSheet.Cells[rw + 1, 2] = 90;
-
-            if (File.Exists(@"" + pathFile))
-            {
-                if (File.Exists(dictionary + "draff.xls")) File.Delete(dictionary + "draff.xls");
-                xlWorkBook.SaveAs(dictionary + "draff.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
-            }
-            xlWorkBook.Close(false, misValue, misValue);
-            File.Copy(dictionary + "draff.xls", @"" + pathFile, true);   
-
-        }
+           
+        }        
     }
 }

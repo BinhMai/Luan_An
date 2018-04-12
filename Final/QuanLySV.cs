@@ -12,13 +12,14 @@ namespace Final
 {
     public partial class QuanLySV : Form
     {
+        DAL_Truong dal_Truong = new DAL_Truong();
         DAL_SinhVien dal_sv = new DAL_SinhVien();
         public QuanLySV()
         {
             InitializeComponent();
-            addBranchToListBox();
-            addAbilityToListBox();
-            addCourseToListBox();
+            //addBranchToListBox();
+            //addAbilityToListBox();
+            //addCourseToListBox();
         }
 
         private void btnQuayLai_Click(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace Final
         }
         public void GUI_SinhVien_Load(object sender, EventArgs e)
         {
-            dgvStudent.DataSource = dal_sv.getSinhVien(); // get sinh vien
+            dgvStudent.DataSource = dal_Truong.getTruong(); // get sinh vien
         }
 
         private void btnThem_Click(object sender, EventArgs e)
