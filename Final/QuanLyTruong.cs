@@ -10,55 +10,41 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Final
 {
-    public partial class QuanLySV : Form
+    public partial class QuanLyTruong : Form
     {
         DAL_Truong dal_Truong = new DAL_Truong();
         DAL_SinhVien dal_sv = new DAL_SinhVien();
-        public QuanLySV()
+        public QuanLyTruong()
         {
             InitializeComponent();
             //addBranchToListBox();
             //addAbilityToListBox();
             //addCourseToListBox();
         }
-
-        private void btnQuayLai_Click(object sender, EventArgs e)
+        public void GUI_Truong_Load(object sender, EventArgs e)
         {
-            Home h = new Home();
-            h.Show();
-            this.Visible = false;
+            dgvTruong.DataSource = dal_Truong.getTruong(); // get sinh vien
         }
-        public void GUI_SinhVien_Load(object sender, EventArgs e)
-        {
-            dgvStudent.DataSource = dal_Truong.getTruong(); // get sinh vien
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            AddStudent add = new AddStudent();
-            add.Show();
-            this.Visible = false;
-        }
-
+     
         private void btnSua_Click(object sender, EventArgs e)
         {
             EditStudent edit = new EditStudent();
             edit.Show();
             this.Visible = false;
             // Lấy thứ tự record hiện hành 
-            int r = dgvStudent.CurrentCell.RowIndex; 
+            int r = dgvTruong.CurrentCell.RowIndex; 
             // Lấy mã sinh viên của record hiện hành 
-            string maSV = dgvStudent.Rows[r].Cells[0].Value.ToString();
-            string hoten = dgvStudent.Rows[r].Cells[1].Value.ToString();
-            string ngaysinh = dgvStudent.Rows[r].Cells[2].Value.ToString();
-            string gioitinh = dgvStudent.Rows[r].Cells[3].Value.ToString();
-            string dantoc = dgvStudent.Rows[r].Cells[4].Value.ToString();
-            string quequan = dgvStudent.Rows[r].Cells[5].Value.ToString();
-            string khoa = dgvStudent.Rows[r].Cells[6].Value.ToString();
-            string hocluc = dgvStudent.Rows[r].Cells[7].Value.ToString();
-            string nganh = dgvStudent.Rows[r].Cells[8].Value.ToString();
-            string vieclam = dgvStudent.Rows[r].Cells[9].Value.ToString();
-            string coquan = dgvStudent.Rows[r].Cells[10].Value.ToString();
+            string maSV = dgvTruong.Rows[r].Cells[0].Value.ToString();
+            string hoten = dgvTruong.Rows[r].Cells[1].Value.ToString();
+            string ngaysinh = dgvTruong.Rows[r].Cells[2].Value.ToString();
+            string gioitinh = dgvTruong.Rows[r].Cells[3].Value.ToString();
+            string dantoc = dgvTruong.Rows[r].Cells[4].Value.ToString();
+            string quequan = dgvTruong.Rows[r].Cells[5].Value.ToString();
+            string khoa = dgvTruong.Rows[r].Cells[6].Value.ToString();
+            string hocluc = dgvTruong.Rows[r].Cells[7].Value.ToString();
+            string nganh = dgvTruong.Rows[r].Cells[8].Value.ToString();
+            string vieclam = dgvTruong.Rows[r].Cells[9].Value.ToString();
+            string coquan = dgvTruong.Rows[r].Cells[10].Value.ToString();
 
             edit.setMaSV(maSV);
             edit.setHoTen(hoten);
@@ -152,13 +138,13 @@ namespace Final
             if (dr == DialogResult.Yes)
             {
                 // Lấy thứ tự record hiện hành
-                int r = dgvStudent.CurrentCell.RowIndex;
+                int r = dgvTruong.CurrentCell.RowIndex;
                 // Lấy MaKH của record hiện hành 
-                string maSV = dgvStudent.Rows[r].Cells[0].Value.ToString();
+                string maSV = dgvTruong.Rows[r].Cells[0].Value.ToString();
                 if (dal_sv.xoaSinhVien(maSV))
                 {
                     MessageBox.Show("Xóa thành công");
-                    dgvStudent.DataSource = dal_sv.getSinhVien(); // load lại table
+                    dgvTruong.DataSource = dal_sv.getSinhVien(); // load lại table
                 }
                 else
                 {
@@ -378,34 +364,28 @@ namespace Final
             SqlDataAdapter da = new SqlDataAdapter(sql, db._conn);
             DataTable dtSinhVien = new DataTable();
             da.Fill(dtSinhVien);
-            dgvStudent.DataSource = dtSinhVien ;
+            dgvTruong.DataSource = dtSinhVien ;
             db._conn.Close();
         }
-
-        private void btnLamMoi_Click(object sender, EventArgs e)
-        {
-            dgvStudent.DataSource = dal_sv.getSinhVien(); // load lại table
-        }
-
         private void btnXem_Click(object sender, EventArgs e)
         {
             ShowStudent show = new ShowStudent();
             show.Show();
             this.Visible = false;
             // Lấy thứ tự record hiện hành 
-            int r = dgvStudent.CurrentCell.RowIndex;
+            int r = dgvTruong.CurrentCell.RowIndex;
             // Lấy mã sinh viên của record hiện hành 
-            string maSV = dgvStudent.Rows[r].Cells[0].Value.ToString();
-            string hoten = dgvStudent.Rows[r].Cells[1].Value.ToString();
-            string ngaysinh = dgvStudent.Rows[r].Cells[2].Value.ToString();
-            string gioitinh = dgvStudent.Rows[r].Cells[3].Value.ToString();
-            string dantoc = dgvStudent.Rows[r].Cells[4].Value.ToString();
-            string quequan = dgvStudent.Rows[r].Cells[5].Value.ToString();
-            string khoa = dgvStudent.Rows[r].Cells[6].Value.ToString();
-            string hocluc = dgvStudent.Rows[r].Cells[7].Value.ToString();
-            string nganh = dgvStudent.Rows[r].Cells[8].Value.ToString();
-            string vieclam = dgvStudent.Rows[r].Cells[9].Value.ToString();
-            string coquan = dgvStudent.Rows[r].Cells[10].Value.ToString();
+            string maSV = dgvTruong.Rows[r].Cells[0].Value.ToString();
+            string hoten = dgvTruong.Rows[r].Cells[1].Value.ToString();
+            string ngaysinh = dgvTruong.Rows[r].Cells[2].Value.ToString();
+            string gioitinh = dgvTruong.Rows[r].Cells[3].Value.ToString();
+            string dantoc = dgvTruong.Rows[r].Cells[4].Value.ToString();
+            string quequan = dgvTruong.Rows[r].Cells[5].Value.ToString();
+            string khoa = dgvTruong.Rows[r].Cells[6].Value.ToString();
+            string hocluc = dgvTruong.Rows[r].Cells[7].Value.ToString();
+            string nganh = dgvTruong.Rows[r].Cells[8].Value.ToString();
+            string vieclam = dgvTruong.Rows[r].Cells[9].Value.ToString();
+            string coquan = dgvTruong.Rows[r].Cells[10].Value.ToString();
 
             show.setMaSV(maSV);
             show.setHoTen(hoten);
@@ -591,9 +571,25 @@ namespace Final
                 xlWorkBook.Close(true, null, null);
                 xlApp.Quit();
             }
+        }
 
+        private void btnQuayLai_Click_1(object sender, EventArgs e)
+        {
+            Home h = new Home();
+            h.Show();
+            this.Visible = false;
+        }
 
+        private void btnLamMoi_Click_1(object sender, EventArgs e)
+        {
+            dgvTruong.DataSource = dal_Truong.getTruong(); // load lại table
+        }
 
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+            AddStudent add = new AddStudent();
+            add.Show();
+            this.Visible = false;
         }
     }
 }

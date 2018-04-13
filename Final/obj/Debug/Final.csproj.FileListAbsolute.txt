@@ -69,8 +69,8 @@ C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.EditStudent.resources
 C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.Home.resources
 C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.Introduction.resources
 C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.Properties.Resources.resources
-C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.QuanLySV.resources
 C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.ShowStudent.resources
 C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.csproj.GenerateResource.Cache
 C:\Users\binhm\Downloads\Luan_An\Final\bin\Debug\Final.exe
 C:\Users\binhm\Downloads\Luan_An\Final\bin\Debug\Final.pdb
+C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.QuanLyTruong.resources

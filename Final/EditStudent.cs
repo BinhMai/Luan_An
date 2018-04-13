@@ -22,7 +22,7 @@ namespace Final
 
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
-            QuanLySV qlsv = new QuanLySV();
+            QuanLyTruong qlsv = new QuanLyTruong();
             qlsv.Show();
             this.Visible = false;
         }
@@ -161,7 +161,7 @@ namespace Final
                 {
                     MessageBox.Show("Sửa thành công");
                     this.Visible = false;
-                    QuanLySV qlsv = new QuanLySV();
+                    QuanLyTruong qlsv = new QuanLyTruong();
                     qlsv.Show();
                 }
                 else

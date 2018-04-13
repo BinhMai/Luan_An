@@ -1,6 +1,6 @@
 ﻿namespace Final
 {
-    partial class QuanLySV
+    partial class QuanLyTruong
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLySV));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLyTruong));
             this.label4 = new System.Windows.Forms.Label();
             this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
             this.cbbDanToc = new System.Windows.Forms.ComboBox();
@@ -48,7 +48,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dgvStudent = new System.Windows.Forms.DataGridView();
+            this.dgvTruong = new System.Windows.Forms.DataGridView();
+            this.ma_truong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTruong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Website = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhThanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DVChuquan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chi_tieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlNganh = new System.Windows.Forms.Panel();
             this.pnlHocLuc = new System.Windows.Forms.Panel();
             this.pnlKhoa = new System.Windows.Forms.Panel();
@@ -61,15 +68,8 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.ma_truong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTruong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Website = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhThanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DVChuquan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chi_tieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTruong)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -230,12 +230,12 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(90)))), ((int)(((byte)(162)))));
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(254, 17);
+            this.label8.Location = new System.Drawing.Point(163, 9);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(462, 31);
+            this.label8.Size = new System.Drawing.Size(639, 31);
             this.label8.TabIndex = 17;
-            this.label8.Text = "QUẢN LÝ THÔNG TIN SINH VIÊN";
+            this.label8.Text = "QUẢN LÝ THÔNG TIN CÁC TRƯỜNG ĐẠI HỌC";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label9
@@ -265,20 +265,20 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dgvStudent);
+            this.panel2.Controls.Add(this.dgvTruong);
             this.panel2.Location = new System.Drawing.Point(15, 189);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(954, 353);
             this.panel2.TabIndex = 23;
             // 
-            // dgvStudent
+            // dgvTruong
             // 
-            this.dgvStudent.AllowUserToAddRows = false;
-            this.dgvStudent.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dgvStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTruong.AllowUserToAddRows = false;
+            this.dgvTruong.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dgvTruong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvTruong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTruong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ma_truong,
             this.TenTruong,
             this.DiaChi,
@@ -286,11 +286,82 @@
             this.TinhThanh,
             this.DVChuquan,
             this.chi_tieu});
-            this.dgvStudent.Location = new System.Drawing.Point(0, 0);
-            this.dgvStudent.Name = "dgvStudent";
-            this.dgvStudent.ReadOnly = true;
-            this.dgvStudent.Size = new System.Drawing.Size(954, 353);
-            this.dgvStudent.TabIndex = 0;
+            this.dgvTruong.Location = new System.Drawing.Point(0, 0);
+            this.dgvTruong.Name = "dgvTruong";
+            this.dgvTruong.ReadOnly = true;
+            this.dgvTruong.Size = new System.Drawing.Size(954, 353);
+            this.dgvTruong.TabIndex = 0;
+            // 
+            // ma_truong
+            // 
+            this.ma_truong.DataPropertyName = "ma_truong";
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ma_truong.DefaultCellStyle = dataGridViewCellStyle10;
+            this.ma_truong.HeaderText = "Mã Trường";
+            this.ma_truong.Name = "ma_truong";
+            this.ma_truong.ReadOnly = true;
+            // 
+            // TenTruong
+            // 
+            this.TenTruong.DataPropertyName = "TenTruong";
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.TenTruong.DefaultCellStyle = dataGridViewCellStyle11;
+            this.TenTruong.HeaderText = "Tên Trường";
+            this.TenTruong.Name = "TenTruong";
+            this.TenTruong.ReadOnly = true;
+            this.TenTruong.Width = 160;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.DiaChi.DefaultCellStyle = dataGridViewCellStyle12;
+            this.DiaChi.HeaderText = "Địa Chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            this.DiaChi.Width = 160;
+            // 
+            // Website
+            // 
+            this.Website.DataPropertyName = "Website";
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Website.DefaultCellStyle = dataGridViewCellStyle13;
+            this.Website.FillWeight = 70F;
+            this.Website.HeaderText = "Website";
+            this.Website.Name = "Website";
+            this.Website.ReadOnly = true;
+            this.Website.Width = 150;
+            // 
+            // TinhThanh
+            // 
+            this.TinhThanh.DataPropertyName = "TinhThanh";
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.TinhThanh.DefaultCellStyle = dataGridViewCellStyle14;
+            this.TinhThanh.FillWeight = 70F;
+            this.TinhThanh.HeaderText = "Tỉnh Thành";
+            this.TinhThanh.Name = "TinhThanh";
+            this.TinhThanh.ReadOnly = true;
+            this.TinhThanh.Width = 150;
+            // 
+            // DVChuquan
+            // 
+            this.DVChuquan.DataPropertyName = "DVChuquan";
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.DVChuquan.DefaultCellStyle = dataGridViewCellStyle15;
+            this.DVChuquan.HeaderText = "Đơn Vị Chủ Quản";
+            this.DVChuquan.Name = "DVChuquan";
+            this.DVChuquan.ReadOnly = true;
+            // 
+            // chi_tieu
+            // 
+            this.chi_tieu.DataPropertyName = "chi_tieu";
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.chi_tieu.DefaultCellStyle = dataGridViewCellStyle16;
+            this.chi_tieu.FillWeight = 70F;
+            this.chi_tieu.HeaderText = "Chỉ tiêu năm 2016";
+            this.chi_tieu.Name = "chi_tieu";
+            this.chi_tieu.ReadOnly = true;
+            this.chi_tieu.Width = 80;
             // 
             // pnlNganh
             // 
@@ -371,6 +442,7 @@
             this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click_1);
             // 
             // btnXem
             // 
@@ -425,6 +497,7 @@
             this.btnQuayLai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuayLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnQuayLai.UseVisualStyleBackColor = false;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click_1);
             // 
             // btnThem
             // 
@@ -443,6 +516,7 @@
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
             // btnSua
             // 
@@ -480,78 +554,7 @@
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
             // 
-            // ma_truong
-            // 
-            this.ma_truong.DataPropertyName = "ma_truong";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ma_truong.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ma_truong.HeaderText = "Mã Trường";
-            this.ma_truong.Name = "ma_truong";
-            this.ma_truong.ReadOnly = true;
-            // 
-            // TenTruong
-            // 
-            this.TenTruong.DataPropertyName = "TenTruong";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TenTruong.DefaultCellStyle = dataGridViewCellStyle3;
-            this.TenTruong.HeaderText = "Tên Trường";
-            this.TenTruong.Name = "TenTruong";
-            this.TenTruong.ReadOnly = true;
-            this.TenTruong.Width = 160;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.DiaChi.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DiaChi.HeaderText = "Địa Chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.ReadOnly = true;
-            this.DiaChi.Width = 160;
-            // 
-            // Website
-            // 
-            this.Website.DataPropertyName = "Website";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Website.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Website.FillWeight = 70F;
-            this.Website.HeaderText = "Website";
-            this.Website.Name = "Website";
-            this.Website.ReadOnly = true;
-            this.Website.Width = 150;
-            // 
-            // TinhThanh
-            // 
-            this.TinhThanh.DataPropertyName = "TinhThanh";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TinhThanh.DefaultCellStyle = dataGridViewCellStyle6;
-            this.TinhThanh.FillWeight = 70F;
-            this.TinhThanh.HeaderText = "Tỉnh Thành";
-            this.TinhThanh.Name = "TinhThanh";
-            this.TinhThanh.ReadOnly = true;
-            this.TinhThanh.Width = 150;
-            // 
-            // DVChuquan
-            // 
-            this.DVChuquan.DataPropertyName = "DVChuquan";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.DVChuquan.DefaultCellStyle = dataGridViewCellStyle7;
-            this.DVChuquan.HeaderText = "Đơn Vị Chủ Quản";
-            this.DVChuquan.Name = "DVChuquan";
-            this.DVChuquan.ReadOnly = true;
-            // 
-            // chi_tieu
-            // 
-            this.chi_tieu.DataPropertyName = "chi_tieu";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chi_tieu.DefaultCellStyle = dataGridViewCellStyle8;
-            this.chi_tieu.FillWeight = 70F;
-            this.chi_tieu.HeaderText = "Chỉ tiêu năm 2016";
-            this.chi_tieu.Name = "chi_tieu";
-            this.chi_tieu.ReadOnly = true;
-            this.chi_tieu.Width = 80;
-            // 
-            // QuanLySV
+            // QuanLyTruong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -584,13 +587,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "QuanLySV";
+            this.Name = "QuanLyTruong";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "QUẢN LÝ SINH VIÊN";
-            this.Load += new System.EventHandler(this.GUI_SinhVien_Load);
+            this.Text = "QUẢN LÝ TRƯỜNG ĐẠI HỌC";
+            this.Load += new System.EventHandler(this.GUI_Truong_Load);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTruong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -613,7 +616,7 @@
         private System.Windows.Forms.Button btnQuayLai;
         private System.Windows.Forms.Button quickFilter;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dgvStudent;
+        private System.Windows.Forms.DataGridView dgvTruong;
         private System.Windows.Forms.Panel pnlNganh;
         private System.Windows.Forms.Panel pnlHocLuc;
         private System.Windows.Forms.Panel pnlKhoa;

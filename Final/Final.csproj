@@ -114,8 +114,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySV.resx">
-      <DependentUpon>QuanLySV.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyTruong.resx">
+      <DependentUpon>QuanLyTruong.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowStudent.resx">
@@ -136,11 +136,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="QuanLySV.cs">
+    <Compile Include="QuanLyTruong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLySV.designer.cs">
-      <DependentUpon>QuanLySV.cs</DependentUpon>
+    <Compile Include="QuanLyTruong.designer.cs">
+      <DependentUpon>QuanLyTruong.cs</DependentUpon>
     </Compile>
     <Compile Include="ShowStudent.cs">
       <SubType>Form</SubType>

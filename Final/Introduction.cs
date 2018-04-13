@@ -24,7 +24,7 @@ namespace Final
 
         private void btnQuanLy_Click(object sender, EventArgs e)
         {
-            QuanLySV Ql = new QuanLySV();
+            QuanLyTruong Ql = new QuanLyTruong();
             this.Visible = false;
             Ql.ShowDialog();
         }

@@ -23,7 +23,7 @@ namespace Final
         }
         public void GUI_Truong_Load(object sender, EventArgs e)
         {
-            dgvSchools.DataSource = dal_truong.getTruong();
+            dgvSchools.DataSource = dal_truong.getDuBaoCung();
         }
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
