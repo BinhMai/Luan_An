@@ -16,7 +16,7 @@ namespace Final
     {
         DAL_Truong dal_truong = new DAL_Truong();
         static string dictionary = System.IO.Path.GetFullPath(@"..\..\..\");
-        static string pathFile = dictionary + "TiLeTotNghiep.xls"; 
+        static string pathFile = dictionary + "TiLeTotNghiep.xlsx"; 
         public DuBaoCung()
         {
             InitializeComponent();
@@ -127,7 +127,7 @@ namespace Final
             }
             else 
             {
-                MessageBox.Show("Vui long chon file TiLeTotNghiep.xls");
+                MessageBox.Show("Vui long chon file TiLeTotNghiep.xlsx");
             }            
         }
 
