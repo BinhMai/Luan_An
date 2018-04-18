@@ -63,14 +63,14 @@ C:\Users\Binh.HX\Desktop\Luan_An\Final\obj\Debug\Final.DuBaoCung.resources
 C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.exe
 C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.pdb
 C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.AddStudent.resources
 C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.DuBaoCung.resources
-C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.EditStudent.resources
 C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.Home.resources
 C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.Introduction.resources
 C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.Properties.Resources.resources
-C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.ShowStudent.resources
 C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.csproj.GenerateResource.Cache
 C:\Users\binhm\Downloads\Luan_An\Final\bin\Debug\Final.exe
 C:\Users\binhm\Downloads\Luan_An\Final\bin\Debug\Final.pdb
 C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.QuanLyTruong.resources
+C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.AddTruong.resources
+C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.showTruong.resources
+C:\Users\binhm\Downloads\Luan_An\Final\obj\Debug\Final.editTruong.resources

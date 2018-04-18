@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DuBaoCung));
-            this.label8 = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.Label();
             this.dgvSchools = new System.Windows.Forms.DataGridView();
             this.ma_truong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTruong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,20 +52,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSchools)).BeginInit();
             this.SuspendLayout();
             // 
-            // label8
+            // txtTitle
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(90)))), ((int)(((byte)(162)))));
-            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(387, 19);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(217, 31);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "DỰ BÁO CUNG";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.txtTitle.AutoSize = true;
+            this.txtTitle.BackColor = System.Drawing.Color.Transparent;
+            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.txtTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(90)))), ((int)(((byte)(162)))));
+            this.txtTitle.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtTitle.Location = new System.Drawing.Point(293, 19);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(296, 31);
+            this.txtTitle.TabIndex = 17;
+            this.txtTitle.Text = "DỰ BÁO CUNG NĂM ";
+            this.txtTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dgvSchools
             // 
@@ -85,7 +85,7 @@
             this.dgvSchools.Location = new System.Drawing.Point(12, 96);
             this.dgvSchools.Name = "dgvSchools";
             this.dgvSchools.ReadOnly = true;
-            this.dgvSchools.Size = new System.Drawing.Size(954, 353);
+            this.dgvSchools.Size = new System.Drawing.Size(954, 372);
             this.dgvSchools.TabIndex = 0;
             // 
             // ma_truong
@@ -174,10 +174,10 @@
             this.btnInput.ForeColor = System.Drawing.Color.White;
             this.btnInput.Image = global::Final.Properties.Resources.import;
             this.btnInput.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnInput.Location = new System.Drawing.Point(530, 536);
+            this.btnInput.Location = new System.Drawing.Point(530, 529);
             this.btnInput.Margin = new System.Windows.Forms.Padding(2);
             this.btnInput.Name = "btnInput";
-            this.btnInput.Size = new System.Drawing.Size(109, 41);
+            this.btnInput.Size = new System.Drawing.Size(133, 63);
             this.btnInput.TabIndex = 30;
             this.btnInput.Text = "Input File";
             this.btnInput.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -193,10 +193,10 @@
             this.btnQuayLai.ForeColor = System.Drawing.Color.White;
             this.btnQuayLai.Image = global::Final.Properties.Resources._return;
             this.btnQuayLai.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnQuayLai.Location = new System.Drawing.Point(397, 536);
+            this.btnQuayLai.Location = new System.Drawing.Point(374, 529);
             this.btnQuayLai.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(119, 41);
+            this.btnQuayLai.Size = new System.Drawing.Size(139, 63);
             this.btnQuayLai.TabIndex = 4;
             this.btnQuayLai.Text = "Quay Lại";
             this.btnQuayLai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -251,7 +251,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnInput);
             this.Controls.Add(this.btnQuayLai);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -268,7 +268,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label txtTitle;
         private System.Windows.Forms.Button btnQuayLai;
         private System.Windows.Forms.DataGridView dgvSchools;
         private System.Windows.Forms.Button btnInput;

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace Final
 {
@@ -44,7 +45,7 @@ namespace Final
         {
             DuBaoCung Tv = new DuBaoCung();
             this.Visible = false;
-            Tv.ShowDialog();
-        }
+            Tv.ShowDialog();           
+        }        
     }
 }

@@ -52,28 +52,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddStudent.cs">
+    <Compile Include="AddTruong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddStudent.designer.cs">
-      <DependentUpon>AddStudent.cs</DependentUpon>
+    <Compile Include="AddTruong.designer.cs">
+      <DependentUpon>AddTruong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Business\AC_Truong.cs" />
+    <Compile Include="Business\DTO_TS.cs" />
+    <Compile Include="Business\DAL_TS.cs" />
+    <Compile Include="Business\DTO_Truong.cs" />
     <Compile Include="Business\DTO_CT.cs" />
     <Compile Include="Business\DAL_Truong.cs" />
-    <Compile Include="Business\DAL_SinhVien.cs" />
-    <Compile Include="Business\DTO_SinhVien.cs" />
     <Compile Include="ConnectDB\DBConnect.cs" />
+    <Compile Include="editTruong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editTruong.designer.cs">
+      <DependentUpon>editTruong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="showTruong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="showTruong.designer.cs">
+      <DependentUpon>showTruong.cs</DependentUpon>
+    </Compile>
     <Compile Include="DuBaoCung.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DuBaoCung.designer.cs">
       <DependentUpon>DuBaoCung.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EditStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditStudent.designer.cs">
-      <DependentUpon>EditStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -89,16 +97,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddStudent.resx">
-      <DependentUpon>AddStudent.cs</DependentUpon>
+    <EmbeddedResource Include="AddTruong.resx">
+      <DependentUpon>AddTruong.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editTruong.resx">
+      <DependentUpon>editTruong.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="showTruong.resx">
+      <DependentUpon>showTruong.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DuBaoCung.resx">
       <DependentUpon>DuBaoCung.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditStudent.resx">
-      <DependentUpon>EditStudent.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
@@ -116,10 +128,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyTruong.resx">
       <DependentUpon>QuanLyTruong.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ShowStudent.resx">
-      <DependentUpon>ShowStudent.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -141,12 +149,6 @@
     </Compile>
     <Compile Include="QuanLyTruong.designer.cs">
       <DependentUpon>QuanLyTruong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ShowStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ShowStudent.designer.cs">
-      <DependentUpon>ShowStudent.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

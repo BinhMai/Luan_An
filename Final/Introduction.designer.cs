@@ -83,12 +83,12 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("San Francisco Text Regular", 10.2F);
             this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label12.Location = new System.Drawing.Point(218, 285);
+            this.label12.Location = new System.Drawing.Point(230, 285);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(344, 17);
+            this.label12.Size = new System.Drawing.Size(302, 17);
             this.label12.TabIndex = 48;
-            this.label12.Text = "Tư vấn ngành, nghề sau khi ra trường, dự báo (nếu có)";
+            this.label12.Text = "Dự báo nguồn cung ngành công nghệ thông tin";
             // 
             // label13
             // 
@@ -99,9 +99,9 @@
             this.label13.Location = new System.Drawing.Point(71, 285);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(119, 17);
+            this.label13.Size = new System.Drawing.Size(159, 17);
             this.label13.TabIndex = 47;
-            this.label13.Text = "Hỗ trợ tư vấn        :";
+            this.label13.Text = "Dự báo                                  :";
             // 
             // label11
             // 
@@ -112,9 +112,9 @@
             this.label11.Location = new System.Drawing.Point(230, 259);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(283, 17);
+            this.label11.Size = new System.Drawing.Size(318, 17);
             this.label11.TabIndex = 46;
-            this.label11.Text = "Tìm kiếm, thêm, sửa, xóa thông tin sinh viên";
+            this.label11.Text = "Tìm kiếm, thêm, sửa, xóa thông tin trường đại học";
             // 
             // label10
             // 
@@ -125,9 +125,9 @@
             this.label10.Location = new System.Drawing.Point(70, 259);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(123, 17);
+            this.label10.Size = new System.Drawing.Size(160, 17);
             this.label10.TabIndex = 45;
-            this.label10.Text = "Quản lý sinh viên: ";
+            this.label10.Text = "Quản lý trường đại học :";
             // 
             // label9
             // 
@@ -235,9 +235,9 @@
             this.label2.Location = new System.Drawing.Point(318, 157);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(277, 17);
+            this.label2.Size = new System.Drawing.Size(281, 17);
             this.label2.TabIndex = 55;
-            this.label2.Text = " Dùng Visual Studio 2017. Chọn run để chạy";
+            this.label2.Text = " Dùng Visual Studio 2008. Chọn run để chạy";
             // 
             // label14
             // 
@@ -293,6 +293,7 @@
             this.MaximizeBox = false;
             this.Name = "Introduction";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
