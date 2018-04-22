@@ -108,21 +108,20 @@ namespace Final
             SqlCommand cmd_1 = new SqlCommand(sql_1, db._conn);
             SqlDataReader data_1 = cmd_1.ExecuteReader();
             while (data_1.Read()) {
-                if ((double)data_1[1] == 2014)
+                if ((int)data_1[1] == 2014)
                 {
-                    show.setNb_2014((double)data_1[2]);
+                    show.setNb_2014((int)data_1[2]);
                 }
-                else if ((double)data_1[1] == 2015)
+                else if ((int)data_1[1] == 2015)
                 {
-                    show.setNb_2015((double)data_1[2]);
+                    show.setNb_2015((int)data_1[2]);
                 }
-                else if ((double)data_1[1] == 2016)
+                else if ((int)data_1[1] == 2016)
                 {
-                    show.setNb_2016((double)data_1[2]);
+                    show.setNb_2016((int)data_1[2]);
                 }else {
-                    show.setNb_2017((double)data_1[2]);
-                }
-                Console.WriteLine((double)data_1[1]);
+                    show.setNb_2017((int)data_1[2]);
+                }                
             }
             data_1.Close();
             db._conn.Close();
@@ -158,23 +157,22 @@ namespace Final
             SqlDataReader data_1 = cmd_1.ExecuteReader();
             while (data_1.Read())
             {
-                if ((double)data_1[1] == 2014)
+                if ((int)data_1[1] == 2014)
                 {
-                    show.setNb_2014((double)data_1[2]);
+                    show.setNb_2014((int)data_1[2]);
                 }
-                else if ((double)data_1[1] == 2015)
+                else if ((int)data_1[1] == 2015)
                 {
-                    show.setNb_2015((double)data_1[2]);
+                    show.setNb_2015((int)data_1[2]);
                 }
-                else if ((double)data_1[1] == 2016)
+                else if ((int)data_1[1] == 2016)
                 {
-                    show.setNb_2016((double)data_1[2]);
+                    show.setNb_2016((int)data_1[2]);
                 }
                 else
                 {
-                    show.setNb_2017((double)data_1[2]);
-                }
-                Console.WriteLine((double)data_1[1]);
+                    show.setNb_2017((int)data_1[2]);
+                }                
             }
             data_1.Close();
             db._conn.Close();
