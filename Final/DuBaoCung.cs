@@ -127,6 +127,7 @@ namespace Final
                     }
                 }
                 db_cung.Text = cung.ToString();
+                xlApp.Workbooks.Close();
             }
             else 
             {
