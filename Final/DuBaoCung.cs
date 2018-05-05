@@ -17,7 +17,7 @@ namespace Final
         DAL_Truong dal_truong = new DAL_Truong();
         static string dictionary = System.IO.Path.GetFullPath(@"..\..\..\");
         static string pathFile = dictionary + "TiLeTotNghiep.xlsx";
-        static int nam;
+        static int nam;        
         public DuBaoCung()
         {
             InitializeComponent();
@@ -46,6 +46,71 @@ namespace Final
                 id_selected.Add(index);
             }
             return id_selected;
+        }
+
+        private int getCungNumber(int i, string MaTruong, double TiLe)
+        {
+            int cung = 0;
+            String ma_truong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
+            if (ma_truong.Equals(MaTruong))
+            {
+                double chi_tieu = Convert.ToDouble(dgvTruong.Rows[i].Cells["chi_tieu"].Value.ToString());
+                int dubao = (int)(chi_tieu * TiLe) / 100;
+                cung += dubao;
+
+                dgvTruong.Rows[i].Cells["ti_le"].Value = TiLe;
+                dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+            }
+            return cung;
+        }
+
+        private int getCungNumberDuBao(int i)
+        {
+            int cung = 0;
+            String matruong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();            
+            if (dgvTruong.Rows[i].Cells["chi_tieu"].Value.ToString() == "0")
+            {
+                DBConnect db = new DBConnect();
+                db._conn.Open();
+                string SQL = string.Format("Select Nam,ChiTieu from TuyenSinh where ChiTieu > 0 AND MaTruong = '" + matruong + "'");
+                Console.WriteLine(SQL);
+                // Command
+                SqlCommand cmd = new SqlCommand(SQL, db._conn);
+                SqlDataReader data = cmd.ExecuteReader();
+                List<DTO_CT> listCt = new List<DTO_CT>();
+
+                while (data.Read())
+                {
+                    DTO_CT ct = new DTO_CT(Int32.Parse(data[0].ToString()), Int32.Parse(data[1].ToString()));
+                    listCt.Add(ct);
+                }
+
+                db._conn.Close();
+
+                int n = listCt.Count;
+                int dubao_ts = 0;
+                if (n != 0)
+                {
+                    dubao_ts = bptoithieu(listCt, n, nam);
+                }
+
+                dgvTruong.Rows[i].Cells["chi_tieu"].Value = dubao_ts;
+
+                double tile = 0;
+                if (dgvTruong.Rows[i].Cells["ti_le"].Value != null)
+                {
+                    tile = Convert.ToDouble(dgvTruong.Rows[i].Cells["ti_le"].Value.ToString());
+                }
+                else
+                {
+                    dgvTruong.Rows[i].Cells["ti_le"].Value = 0;
+                }
+                int dubao = (int)(dubao_ts * tile) / 100;
+                dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+
+                cung += dubao;                
+            }
+            return cung;
         }
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
@@ -80,32 +145,16 @@ namespace Final
                     if (id_selected.Count > 1)
                     {
                         foreach(int i in id_selected) {
-                            String ma_truong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
-                            if (ma_truong.Equals(MaTruong))
-                            {
-                                double chi_tieu = Convert.ToDouble(dgvTruong.Rows[i].Cells["chi_tieu"].Value.ToString());
-                                int dubao = (int)(chi_tieu * TiLe) / 100;
-                                cung += dubao;
-
-                                dgvTruong.Rows[i].Cells["ti_le"].Value = TiLe;
-                                dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
-                            }
+                            int cung_nb = getCungNumber(i,MaTruong,TiLe);
+                            cung += cung_nb;
                         }
                     }
                     else 
                     {
                         for (int i = 0; i < dgvTruong.RowCount; i++)
                         {
-                            String ma_truong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
-                            if (ma_truong.Equals(MaTruong))
-                            {
-                                double chi_tieu = Convert.ToDouble(dgvTruong.Rows[i].Cells["chi_tieu"].Value.ToString());
-                                int dubao = (int)(chi_tieu * TiLe) / 100;
-                                cung += dubao;
-
-                                dgvTruong.Rows[i].Cells["ti_le"].Value = TiLe;
-                                dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
-                            }
+                            int cung_nb = getCungNumber(i, MaTruong, TiLe);
+                            cung += cung_nb;
                         }
                     }                    
                 }
@@ -113,47 +162,8 @@ namespace Final
                     {
                         foreach(int i in id_selected) {
                         {
-                            String matruong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
-                            if (dgvTruong.Rows[i].Cells["chi_tieu"].Value.ToString() == "0")
-                            {
-                                DBConnect db = new DBConnect();
-                                db._conn.Open();
-                                string SQL = string.Format("Select Nam,ChiTieu from TuyenSinh where ChiTieu > 0 AND MaTruong = '" + matruong + "'");
-                                Console.WriteLine(SQL);
-                                // Command
-                                SqlCommand cmd = new SqlCommand(SQL, db._conn);
-                                SqlDataReader data = cmd.ExecuteReader();
-                                List<DTO_CT> listCt = new List<DTO_CT>();
-
-                                while (data.Read())
-                                {
-                                    DTO_CT ct = new DTO_CT(Int32.Parse(data[0].ToString()), Int32.Parse(data[1].ToString()));
-                                    listCt.Add(ct);
-                                }
-
-                                db._conn.Close();
-
-                                int n = listCt.Count;
-                                int dubao_ts = 0;
-                                if (n != 0) {
-                                    dubao_ts = bptoithieu(listCt, n, nam);
-                                }                        
-
-                                dgvTruong.Rows[i].Cells["chi_tieu"].Value = dubao_ts;
-
-                                double tile = 0;
-                                if (dgvTruong.Rows[i].Cells["ti_le"].Value != null)
-                                {
-                                    tile = Convert.ToDouble(dgvTruong.Rows[i].Cells["ti_le"].Value.ToString());
-                                }
-                                else {
-                                    dgvTruong.Rows[i].Cells["ti_le"].Value = 0;
-                                }                        
-                                int dubao = (int)(dubao_ts * tile) / 100;
-                                dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
-
-                                cung += dubao;
-                            }
+                            int cung_nb = getCungNumberDuBao(i);                            
+                            cung += cung_nb;
                         }
                         db_cung.Text = cung.ToString();
                         xlApp.Workbooks.Close();
@@ -163,47 +173,8 @@ namespace Final
                 {
                     for (int i = 0; i < dgvTruong.RowCount; i++)
                     {
-                        String matruong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
-                        if (dgvTruong.Rows[i].Cells["chi_tieu"].Value.ToString() == "0")
-                        {
-                            DBConnect db = new DBConnect();
-                            db._conn.Open();
-                            string SQL = string.Format("Select Nam,ChiTieu from TuyenSinh where ChiTieu > 0 AND MaTruong = '" + matruong + "'");
-                            Console.WriteLine(SQL);
-                            // Command
-                            SqlCommand cmd = new SqlCommand(SQL, db._conn);
-                            SqlDataReader data = cmd.ExecuteReader();
-                            List<DTO_CT> listCt = new List<DTO_CT>();
-
-                            while (data.Read())
-                            {
-                                DTO_CT ct = new DTO_CT(Int32.Parse(data[0].ToString()), Int32.Parse(data[1].ToString()));
-                                listCt.Add(ct);
-                            }
-
-                            db._conn.Close();
-
-                            int n = listCt.Count;
-                            int dubao_ts = 0;
-                            if (n != 0) {
-                                dubao_ts = bptoithieu(listCt, n, nam);
-                            }                        
-
-                            dgvTruong.Rows[i].Cells["chi_tieu"].Value = dubao_ts;
-
-                            double tile = 0;
-                            if (dgvTruong.Rows[i].Cells["ti_le"].Value != null)
-                            {
-                                tile = Convert.ToDouble(dgvTruong.Rows[i].Cells["ti_le"].Value.ToString());
-                            }
-                            else {
-                                dgvTruong.Rows[i].Cells["ti_le"].Value = 0;
-                            }                        
-                            int dubao = (int)(dubao_ts * tile) / 100;
-                            dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
-
-                            cung += dubao;
-                        }
+                        int cung_nb = getCungNumberDuBao(i);
+                        cung += cung_nb;
                     }
                     db_cung.Text = cung.ToString();
                     xlApp.Workbooks.Close();
