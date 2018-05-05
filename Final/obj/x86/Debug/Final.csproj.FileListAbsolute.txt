@@ -1,0 +1,14 @@
+C:\Users\binhm\Downloads\Luan_An\Final\bin\x86\Debug\Final.exe
+C:\Users\binhm\Downloads\Luan_An\Final\bin\x86\Debug\Final.pdb
+C:\Users\binhm\Downloads\Luan_An\Final\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\binhm\Downloads\Luan_An\Final\obj\x86\Debug\Final.AddTruong.resources
+C:\Users\binhm\Downloads\Luan_An\Final\obj\x86\Debug\Final.editTruong.resources
+C:\Users\binhm\Downloads\Luan_An\Final\obj\x86\Debug\Final.showTruong.resources
+C:\Users\binhm\Downloads\Luan_An\Final\obj\x86\Debug\Final.DuBaoCung.resources
+C:\Users\binhm\Downloads\Luan_An\Final\obj\x86\Debug\Final.Home.resources
+C:\Users\binhm\Downloads\Luan_An\Final\obj\x86\Debug\Final.Introduction.resources
+C:\Users\binhm\Downloads\Luan_An\Final\obj\x86\Debug\Final.Properties.Resources.resources
+C:\Users\binhm\Downloads\Luan_An\Final\obj\x86\Debug\Final.QuanLyTruong.resources
+C:\Users\binhm\Downloads\Luan_An\Final\obj\x86\Debug\Final.csproj.GenerateResource.Cache
+C:\Users\binhm\Downloads\Luan_An\Final\obj\x86\Debug\Final.exe
+C:\Users\binhm\Downloads\Luan_An\Final\obj\x86\Debug\Final.pdb

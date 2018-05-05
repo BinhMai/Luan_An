@@ -314,6 +314,7 @@
             this.textSearch.Name = "textSearch";
             this.textSearch.Size = new System.Drawing.Size(255, 34);
             this.textSearch.TabIndex = 33;
+            this.textSearch.TextChanged += new System.EventHandler(this.textSearch_TextChanged);
             // 
             // QuanLyTruong
             // 

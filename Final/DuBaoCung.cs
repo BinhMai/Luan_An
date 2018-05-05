@@ -30,7 +30,7 @@ namespace Final
         }
         public void GUI_Truong_Load(object sender, EventArgs e)
         {
-            dgvSchools.DataSource = dal_truong.getDuBaoCung(nam);
+            dgvTruong.DataSource = dal_truong.getDuBaoCung(nam);
         }
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
@@ -38,7 +38,15 @@ namespace Final
             h.Show();
             this.Visible = false;            
         }
-
+        private List<int> getIdSelected() {
+            List<int> id_selected = new List<int>();
+            foreach (DataGridViewRow row in dgvTruong.SelectedRows)
+            {
+                int index = row.Index;
+                id_selected.Add(index);
+            }
+            return id_selected;
+        }
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Start");
@@ -55,79 +63,151 @@ namespace Final
             int cung = 0;
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK && ofd.FileName == pathFile)
-            {
+            {                
                 //Excel.Application xlApp = new Excel.Application();
                 xlWorkBook = xlApp.Workbooks.Open(@"" + ofd.FileName, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
                 xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
                 range = xlWorkSheet.UsedRange;
                 rw = range.Rows.Count;
                 cl = range.Columns.Count;
+                List<int> id_selected = getIdSelected();
 
                 for (rCnt = 2; rCnt <= rw; rCnt++)
                 {
                     String MaTruong = (String)(range.Cells[rCnt, 1] as Excel.Range).Value2;
                     double TiLe = (double)(range.Cells[rCnt, 2] as Excel.Range).Value2;
-
-                    for (int i = 0; i < dgvSchools.RowCount; i++)
+                 
+                    if (id_selected.Count > 1)
                     {
-                        String ma_truong = dgvSchools.Rows[i].Cells["ma_truong"].Value.ToString();
-                        if (ma_truong.Equals(MaTruong))
-                        {
-                            double chi_tieu = Convert.ToDouble(dgvSchools.Rows[i].Cells["chi_tieu"].Value.ToString());
-                            int dubao = (int)(chi_tieu * TiLe) / 100;
-                            cung += dubao;
+                        foreach(int i in id_selected) {
+                            String ma_truong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
+                            if (ma_truong.Equals(MaTruong))
+                            {
+                                double chi_tieu = Convert.ToDouble(dgvTruong.Rows[i].Cells["chi_tieu"].Value.ToString());
+                                int dubao = (int)(chi_tieu * TiLe) / 100;
+                                cung += dubao;
 
-                            dgvSchools.Rows[i].Cells["ti_le"].Value = TiLe;
-                            dgvSchools.Rows[i].Cells["du_bao"].Value = dubao;
+                                dgvTruong.Rows[i].Cells["ti_le"].Value = TiLe;
+                                dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+                            }
                         }
                     }
+                    else 
+                    {
+                        for (int i = 0; i < dgvTruong.RowCount; i++)
+                        {
+                            String ma_truong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
+                            if (ma_truong.Equals(MaTruong))
+                            {
+                                double chi_tieu = Convert.ToDouble(dgvTruong.Rows[i].Cells["chi_tieu"].Value.ToString());
+                                int dubao = (int)(chi_tieu * TiLe) / 100;
+                                cung += dubao;
+
+                                dgvTruong.Rows[i].Cells["ti_le"].Value = TiLe;
+                                dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+                            }
+                        }
+                    }                    
                 }
-                for (int i = 0; i < dgvSchools.RowCount; i++)
+                if (id_selected.Count > 1)
+                    {
+                        foreach(int i in id_selected) {
+                        {
+                            String matruong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
+                            if (dgvTruong.Rows[i].Cells["chi_tieu"].Value.ToString() == "0")
+                            {
+                                DBConnect db = new DBConnect();
+                                db._conn.Open();
+                                string SQL = string.Format("Select Nam,ChiTieu from TuyenSinh where ChiTieu > 0 AND MaTruong = '" + matruong + "'");
+                                Console.WriteLine(SQL);
+                                // Command
+                                SqlCommand cmd = new SqlCommand(SQL, db._conn);
+                                SqlDataReader data = cmd.ExecuteReader();
+                                List<DTO_CT> listCt = new List<DTO_CT>();
+
+                                while (data.Read())
+                                {
+                                    DTO_CT ct = new DTO_CT(Int32.Parse(data[0].ToString()), Int32.Parse(data[1].ToString()));
+                                    listCt.Add(ct);
+                                }
+
+                                db._conn.Close();
+
+                                int n = listCt.Count;
+                                int dubao_ts = 0;
+                                if (n != 0) {
+                                    dubao_ts = bptoithieu(listCt, n, nam);
+                                }                        
+
+                                dgvTruong.Rows[i].Cells["chi_tieu"].Value = dubao_ts;
+
+                                double tile = 0;
+                                if (dgvTruong.Rows[i].Cells["ti_le"].Value != null)
+                                {
+                                    tile = Convert.ToDouble(dgvTruong.Rows[i].Cells["ti_le"].Value.ToString());
+                                }
+                                else {
+                                    dgvTruong.Rows[i].Cells["ti_le"].Value = 0;
+                                }                        
+                                int dubao = (int)(dubao_ts * tile) / 100;
+                                dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+
+                                cung += dubao;
+                            }
+                        }
+                        db_cung.Text = cung.ToString();
+                        xlApp.Workbooks.Close();
+                    }
+                }
+                else
                 {
-                    String matruong = dgvSchools.Rows[i].Cells["ma_truong"].Value.ToString();
-                    if (dgvSchools.Rows[i].Cells["chi_tieu"].Value.ToString() == "0")
+                    for (int i = 0; i < dgvTruong.RowCount; i++)
                     {
-                        DBConnect db = new DBConnect();
-                        db._conn.Open();
-                        string SQL = string.Format("Select Nam,ChiTieu from TuyenSinh where ChiTieu > 0 AND MaTruong = '" + matruong + "'");
-                        Console.WriteLine(SQL);
-                        // Command
-                        SqlCommand cmd = new SqlCommand(SQL, db._conn);
-                        SqlDataReader data = cmd.ExecuteReader();
-                        List<DTO_CT> listCt = new List<DTO_CT>();
-
-                        while (data.Read())
+                        String matruong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
+                        if (dgvTruong.Rows[i].Cells["chi_tieu"].Value.ToString() == "0")
                         {
-                            DTO_CT ct = new DTO_CT(Int32.Parse(data[0].ToString()), Int32.Parse(data[1].ToString()));
-                            listCt.Add(ct);
+                            DBConnect db = new DBConnect();
+                            db._conn.Open();
+                            string SQL = string.Format("Select Nam,ChiTieu from TuyenSinh where ChiTieu > 0 AND MaTruong = '" + matruong + "'");
+                            Console.WriteLine(SQL);
+                            // Command
+                            SqlCommand cmd = new SqlCommand(SQL, db._conn);
+                            SqlDataReader data = cmd.ExecuteReader();
+                            List<DTO_CT> listCt = new List<DTO_CT>();
+
+                            while (data.Read())
+                            {
+                                DTO_CT ct = new DTO_CT(Int32.Parse(data[0].ToString()), Int32.Parse(data[1].ToString()));
+                                listCt.Add(ct);
+                            }
+
+                            db._conn.Close();
+
+                            int n = listCt.Count;
+                            int dubao_ts = 0;
+                            if (n != 0) {
+                                dubao_ts = bptoithieu(listCt, n, nam);
+                            }                        
+
+                            dgvTruong.Rows[i].Cells["chi_tieu"].Value = dubao_ts;
+
+                            double tile = 0;
+                            if (dgvTruong.Rows[i].Cells["ti_le"].Value != null)
+                            {
+                                tile = Convert.ToDouble(dgvTruong.Rows[i].Cells["ti_le"].Value.ToString());
+                            }
+                            else {
+                                dgvTruong.Rows[i].Cells["ti_le"].Value = 0;
+                            }                        
+                            int dubao = (int)(dubao_ts * tile) / 100;
+                            dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+
+                            cung += dubao;
                         }
-
-                        db._conn.Close();
-
-                        int n = listCt.Count;
-                        int dubao_ts = 0;
-                        if (n != 0) {
-                            dubao_ts = bptoithieu(listCt, n, nam);
-                        }                        
-
-                        dgvSchools.Rows[i].Cells["chi_tieu"].Value = dubao_ts;
-
-                        double tile = 0;
-                        if (dgvSchools.Rows[i].Cells["ti_le"].Value != null)
-                        {
-                            tile = Convert.ToDouble(dgvSchools.Rows[i].Cells["ti_le"].Value.ToString());
-                        }
-                        else {
-                            dgvSchools.Rows[i].Cells["ti_le"].Value = 0;
-                        }                        
-                        int dubao = (int)(dubao_ts * tile) / 100;
-                        dgvSchools.Rows[i].Cells["du_bao"].Value = dubao;
-
-                        cung += dubao;
                     }
+                    db_cung.Text = cung.ToString();
+                    xlApp.Workbooks.Close();
                 }
-                db_cung.Text = cung.ToString();
-                xlApp.Workbooks.Close();
             }
             else 
             {
@@ -181,6 +261,44 @@ namespace Final
             prompt.Controls.Add(inputBox);
             prompt.ShowDialog();            
             return (int)inputBox.Value;
+        }
+
+        private void quickFilter_Click(object sender, EventArgs e)
+        {
+            db_cung.Text = "";
+            DBConnect db = new DBConnect();
+            db._conn.Open();
+            string sql = "SELECT cosodaotao.MaTruong as ma_truong,TenTruong,DiaChi,TuyenSinh.Nam as Nam,TuyenSinh.ChiTieu as chi_tieu FROM cosodaotao Inner Join TuyenSinh on TuyenSinh.MaTruong = cosodaotao.MaTruong AND TuyenSinh.Nam=" + nam;
+            string search = "";
+            if (textSearch.Text != "")
+            {
+                search = textSearch.Text;
+                if (search.Length < 5)
+                {
+                    sql += "AND cosodaotao.MaTruong=" + "'" + search + "'";
+                }
+                else
+                {
+                    sql += "AND cosodaotao.TenTruong LIKE N'%" + search + "%'";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa cần tìm kiếm");
+            }
+            Console.WriteLine(sql);
+            SqlDataAdapter da = new SqlDataAdapter(sql, db._conn);
+            DataTable dtTruong = new DataTable();
+            da.Fill(dtTruong);
+            dgvTruong.DataSource = dtTruong;
+            db._conn.Close();
+        }
+
+        private void btnLamMoi_Click_1(object sender, EventArgs e)
+        {
+            dgvTruong.DataSource = dal_truong.getDuBaoCung(nam);
+            textSearch.Text = "";
+            db_cung.Text = "";
         }
     }
 }

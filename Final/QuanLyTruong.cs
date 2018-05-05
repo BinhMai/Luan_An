@@ -178,5 +178,10 @@ namespace Final
             db._conn.Close();
             show.Show();
         }
+
+        private void textSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

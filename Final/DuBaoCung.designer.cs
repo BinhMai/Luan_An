@@ -35,7 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DuBaoCung));
             this.txtTitle = new System.Windows.Forms.Label();
-            this.dgvSchools = new System.Windows.Forms.DataGridView();
+            this.dgvTruong = new System.Windows.Forms.DataGridView();
             this.ma_truong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTruong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +49,10 @@
             this.tiLeMucLuong = new System.Windows.Forms.Label();
             this.db_cung = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSchools)).BeginInit();
+            this.textSearch = new System.Windows.Forms.TextBox();
+            this.quickFilter = new System.Windows.Forms.Button();
+            this.btnLamMoi = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTruong)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTitle
@@ -67,14 +70,14 @@
             this.txtTitle.Text = "DỰ BÁO CUNG NĂM ";
             this.txtTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // dgvSchools
+            // dgvTruong
             // 
-            this.dgvSchools.AllowUserToAddRows = false;
-            this.dgvSchools.AllowUserToDeleteRows = false;
+            this.dgvTruong.AllowUserToAddRows = false;
+            this.dgvTruong.AllowUserToDeleteRows = false;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dgvSchools.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvSchools.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSchools.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTruong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvTruong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTruong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ma_truong,
             this.TenTruong,
             this.DiaChi,
@@ -82,11 +85,11 @@
             this.chi_tieu,
             this.ti_le,
             this.du_bao});
-            this.dgvSchools.Location = new System.Drawing.Point(12, 96);
-            this.dgvSchools.Name = "dgvSchools";
-            this.dgvSchools.ReadOnly = true;
-            this.dgvSchools.Size = new System.Drawing.Size(954, 372);
-            this.dgvSchools.TabIndex = 0;
+            this.dgvTruong.Location = new System.Drawing.Point(18, 115);
+            this.dgvTruong.Name = "dgvTruong";
+            this.dgvTruong.ReadOnly = true;
+            this.dgvTruong.Size = new System.Drawing.Size(954, 372);
+            this.dgvTruong.TabIndex = 0;
             // 
             // ma_truong
             // 
@@ -174,7 +177,7 @@
             this.btnInput.ForeColor = System.Drawing.Color.White;
             this.btnInput.Image = global::Final.Properties.Resources.import;
             this.btnInput.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnInput.Location = new System.Drawing.Point(530, 529);
+            this.btnInput.Location = new System.Drawing.Point(530, 538);
             this.btnInput.Margin = new System.Windows.Forms.Padding(2);
             this.btnInput.Name = "btnInput";
             this.btnInput.Size = new System.Drawing.Size(133, 63);
@@ -193,7 +196,7 @@
             this.btnQuayLai.ForeColor = System.Drawing.Color.White;
             this.btnQuayLai.Image = global::Final.Properties.Resources._return;
             this.btnQuayLai.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnQuayLai.Location = new System.Drawing.Point(374, 529);
+            this.btnQuayLai.Location = new System.Drawing.Point(242, 538);
             this.btnQuayLai.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuayLai.Name = "btnQuayLai";
             this.btnQuayLai.Size = new System.Drawing.Size(139, 63);
@@ -209,7 +212,7 @@
             this.tiLeMucLuong.AutoSize = true;
             this.tiLeMucLuong.BackColor = System.Drawing.Color.Transparent;
             this.tiLeMucLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tiLeMucLuong.Location = new System.Drawing.Point(671, 490);
+            this.tiLeMucLuong.Location = new System.Drawing.Point(671, 503);
             this.tiLeMucLuong.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.tiLeMucLuong.Name = "tiLeMucLuong";
             this.tiLeMucLuong.Size = new System.Drawing.Size(94, 24);
@@ -219,7 +222,7 @@
             // db_cung
             // 
             this.db_cung.FormattingEnabled = true;
-            this.db_cung.Location = new System.Drawing.Point(385, 490);
+            this.db_cung.Location = new System.Drawing.Point(385, 503);
             this.db_cung.Name = "db_cung";
             this.db_cung.Size = new System.Drawing.Size(269, 21);
             this.db_cung.TabIndex = 73;
@@ -231,11 +234,57 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label14.Location = new System.Drawing.Point(257, 490);
+            this.label14.Location = new System.Drawing.Point(257, 503);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(111, 20);
             this.label14.TabIndex = 72;
             this.label14.Text = "Dự báo cung";
+            // 
+            // textSearch
+            // 
+            this.textSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textSearch.Location = new System.Drawing.Point(662, 73);
+            this.textSearch.Multiline = true;
+            this.textSearch.Name = "textSearch";
+            this.textSearch.Size = new System.Drawing.Size(255, 34);
+            this.textSearch.TabIndex = 76;
+            // 
+            // quickFilter
+            // 
+            this.quickFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(105)))), ((int)(((byte)(159)))));
+            this.quickFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.quickFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.quickFilter.ForeColor = System.Drawing.Color.White;
+            this.quickFilter.Image = global::Final.Properties.Resources.look;
+            this.quickFilter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.quickFilter.Location = new System.Drawing.Point(916, 70);
+            this.quickFilter.Margin = new System.Windows.Forms.Padding(2);
+            this.quickFilter.Name = "quickFilter";
+            this.quickFilter.Size = new System.Drawing.Size(56, 40);
+            this.quickFilter.TabIndex = 75;
+            this.quickFilter.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.quickFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.quickFilter.UseVisualStyleBackColor = false;
+            this.quickFilter.Click += new System.EventHandler(this.quickFilter_Click);
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(105)))), ((int)(((byte)(159)))));
+            this.btnLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoi.Image = global::Final.Properties.Resources.refresh;
+            this.btnLamMoi.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLamMoi.Location = new System.Drawing.Point(385, 538);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(141, 63);
+            this.btnLamMoi.TabIndex = 77;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click_1);
             // 
             // DuBaoCung
             // 
@@ -244,10 +293,13 @@
             this.BackgroundImage = global::Final.Properties.Resources._7;
             this.ClientSize = new System.Drawing.Size(984, 612);
             this.ControlBox = false;
+            this.Controls.Add(this.btnLamMoi);
+            this.Controls.Add(this.textSearch);
+            this.Controls.Add(this.quickFilter);
             this.Controls.Add(this.tiLeMucLuong);
             this.Controls.Add(this.db_cung);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.dgvSchools);
+            this.Controls.Add(this.dgvTruong);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnInput);
             this.Controls.Add(this.btnQuayLai);
@@ -260,7 +312,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DỰ BÁO CUNG";
             this.Load += new System.EventHandler(this.GUI_Truong_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSchools)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTruong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,7 +322,7 @@
 
         private System.Windows.Forms.Label txtTitle;
         private System.Windows.Forms.Button btnQuayLai;
-        private System.Windows.Forms.DataGridView dgvSchools;
+        private System.Windows.Forms.DataGridView dgvTruong;
         private System.Windows.Forms.Button btnInput;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label tiLeMucLuong;
@@ -283,5 +335,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn chi_tieu;
         private System.Windows.Forms.DataGridViewTextBoxColumn ti_le;
         private System.Windows.Forms.DataGridViewTextBoxColumn du_bao;
+        private System.Windows.Forms.TextBox textSearch;
+        private System.Windows.Forms.Button quickFilter;
+        private System.Windows.Forms.Button btnLamMoi;
     }
 }
