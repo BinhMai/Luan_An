@@ -139,24 +139,29 @@ namespace Final
 
                 for (rCnt = 2; rCnt <= rw; rCnt++)
                 {
-                    String MaTruong = (String)(range.Cells[rCnt, 1] as Excel.Range).Value2;
-                    double TiLe = (double)(range.Cells[rCnt, 2] as Excel.Range).Value2;
-                 
-                    if (id_selected.Count > 1)
+                    Object col_1 = (range.Cells[rCnt, 1] as Excel.Range).Value2;
+                    Object col_2 = (range.Cells[rCnt, 2] as Excel.Range).Value2;
+                    if (col_1 != null && col_2 != null)
                     {
-                        foreach(int i in id_selected) {
-                            int cung_nb = getCungNumber(i,MaTruong,TiLe);
-                            cung += cung_nb;
-                        }
-                    }
-                    else 
-                    {
-                        for (int i = 0; i < dgvTruong.RowCount; i++)
+                        String MaTruong = (String)col_1;
+                        double TiLe = (double)col_2;
+                        if (id_selected.Count > 1)
                         {
-                            int cung_nb = getCungNumber(i, MaTruong, TiLe);
-                            cung += cung_nb;
+                            foreach (int i in id_selected)
+                            {
+                                int cung_nb = getCungNumber(i, MaTruong, TiLe);
+                                cung += cung_nb;
+                            }
                         }
-                    }                    
+                        else
+                        {
+                            for (int i = 0; i < dgvTruong.RowCount; i++)
+                            {
+                                int cung_nb = getCungNumber(i, MaTruong, TiLe);
+                                cung += cung_nb;
+                            }
+                        }                    
+                    }                                    
                 }
                 if (id_selected.Count > 1)
                     {
