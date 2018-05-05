@@ -340,7 +340,7 @@
             this.Name = "QuanLyTruong";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "QUẢN LÝ TRƯỜNG ĐẠI HỌC";
+            this.Text = "QUẢN LÝ CƠ SỞ ĐÀO TẠO";
             this.Load += new System.EventHandler(this.GUI_Truong_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTruong)).EndInit();
