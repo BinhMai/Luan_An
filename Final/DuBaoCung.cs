@@ -13,8 +13,8 @@ using System.IO;
 namespace Final
 {
     public partial class DuBaoCung : Form
-    {
-        DAL_Truong dal_truong = new DAL_Truong();
+    {        
+        DAL_DuBao dal_dubao = new DAL_DuBao();
         static string dictionary = System.IO.Path.GetFullPath(@"..\..\..\");
         static string pathFile = dictionary + "TiLeTotNghiep.xlsx";
         static int nam;        
@@ -30,7 +30,8 @@ namespace Final
         }
         public void GUI_Truong_Load(object sender, EventArgs e)
         {
-            dgvTruong.DataSource = dal_truong.getDuBaoCung(nam);
+            dgvTruong.DataSource = dal_dubao.getDuBaoCung(nam);
+            updateDuBaoCung();            
         }
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
@@ -48,25 +49,46 @@ namespace Final
             return id_selected;
         }
 
-        private int getCungNumber(int i, string MaTruong, double TiLe)
-        {
-            int cung = 0;
+        private void getCungNumber(int i, string MaTruong, double TiLe, int check)
+        {            
             String ma_truong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
             if (ma_truong.Equals(MaTruong))
             {
                 double chi_tieu = Convert.ToDouble(dgvTruong.Rows[i].Cells["chi_tieu"].Value.ToString());
                 int dubao = (int)(chi_tieu * TiLe) / 100;
-                cung += dubao;
 
-                dgvTruong.Rows[i].Cells["ti_le"].Value = TiLe;
-                dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
-            }
-            return cung;
+                if (check == 1)
+                {
+                    DAL_DuBao dbcung = new DAL_DuBao();
+
+                    object tile = dgvTruong.Rows[i].Cells["ti_le"].Value;
+                    object db = dgvTruong.Rows[i].Cells["du_bao"].Value;
+
+                    if (tile == null && db == null)
+                    {
+                        dgvTruong.Rows[i].Cells["ti_le"].Value = TiLe;
+                        dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+
+                        DTO_DuBao dbao = new DTO_DuBao(ma_truong, (float)TiLe, dubao, nam, (int)chi_tieu);
+                        dbcung.addDuBaoCung(dbao);
+                    }
+                    else
+                    {
+                        dgvTruong.Rows[i].Cells["ti_le"].Value = TiLe;
+                        dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+
+                        DTO_DuBao dbao = new DTO_DuBao(ma_truong, (float)TiLe, dubao, nam, (int)chi_tieu);
+                        dbcung.updateDuBaoCung(dbao);
+                    }
+                }else {
+                    dgvTruong.Rows[i].Cells["ti_le"].Value = TiLe;
+                    dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+                }                
+            }            
         }
 
-        private int getCungNumberDuBao(int i)
-        {
-            int cung = 0;
+        private void getCungNumberDuBao(int i, int check)
+        {            
             String matruong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();            
             if (dgvTruong.Rows[i].Cells["chi_tieu"].Value.ToString() == "0")
             {
@@ -106,11 +128,51 @@ namespace Final
                     dgvTruong.Rows[i].Cells["ti_le"].Value = 0;
                 }
                 int dubao = (int)(dubao_ts * tile) / 100;
-                dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
 
-                cung += dubao;                
+                if (check == 1)
+                {
+                    object du_bao = dgvTruong.Rows[i].Cells["du_bao"].Value;
+                    if (du_bao != null)
+                    {
+                        dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+                        DAL_DuBao dbcung = new DAL_DuBao();
+                        DTO_DuBao dbao = new DTO_DuBao(matruong, (float)tile, dubao, nam, (int)dubao_ts);
+                        dbcung.updateDuBaoCung(dbao);
+                    }
+                    else
+                    {
+                        dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+                        DAL_DuBao dbcung = new DAL_DuBao();
+                        DTO_DuBao dbao = new DTO_DuBao(matruong, (float)tile, dubao, nam, (int)dubao_ts);
+                        dbcung.addDuBaoCung(dbao);
+                    }
+                }
+                else 
+                {
+                    dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+                }                
+            }            
+        }
+        private void hideTruong(List<int> id_selected) {
+            for (int i = 0; i < dgvTruong.RowCount; i++)
+            {
+                if (id_selected.IndexOf(i) == -1)
+                {
+                    dgvTruong.Rows[i].Visible = false;
+                }
+            }            
+        }
+        private void updateDuBaoCung() {
+            int cung = 0;
+            for (int i = 0; i < dgvTruong.RowCount; i++)
+            {
+                object du_bao = dgvTruong.Rows[i].Cells["du_bao"].Value;
+                if(du_bao != null) {
+                    int db = (int)du_bao;
+                    cung+= db;
+                }                
             }
-            return cung;
+            db_cung.Text = cung.ToString();
         }
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
@@ -124,8 +186,7 @@ namespace Final
             int rCnt;
             int cCnt;
             int rw = 0;
-            int cl = 0;
-            int cung = 0;
+            int cl = 0;            
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK && ofd.FileName == pathFile)
             {                
@@ -135,55 +196,54 @@ namespace Final
                 range = xlWorkSheet.UsedRange;
                 rw = range.Rows.Count;
                 cl = range.Columns.Count;
-                List<int> id_selected = getIdSelected();
-
+                //xoa data dubaocung cu                
+                List<int> id_selected = getIdSelected();                
+                if (id_selected.Count > 0) {                    
+                    hideTruong(id_selected);
+                }                
                 for (rCnt = 2; rCnt <= rw; rCnt++)
-                {
+                {   
                     Object col_1 = (range.Cells[rCnt, 1] as Excel.Range).Value2;
                     Object col_2 = (range.Cells[rCnt, 2] as Excel.Range).Value2;
                     if (col_1 != null && col_2 != null)
                     {
                         String MaTruong = (String)col_1;
                         double TiLe = (double)col_2;
-                        if (id_selected.Count > 1)
-                        {
+                        if (id_selected.Count > 0)
+                        {                            
                             foreach (int i in id_selected)
                             {
-                                int cung_nb = getCungNumber(i, MaTruong, TiLe);
-                                cung += cung_nb;
+                                getCungNumber(i, MaTruong, TiLe,0);                                
                             }
                         }
                         else
                         {
                             for (int i = 0; i < dgvTruong.RowCount; i++)
                             {
-                                int cung_nb = getCungNumber(i, MaTruong, TiLe);
-                                cung += cung_nb;
+                                getCungNumber(i, MaTruong, TiLe,1);
                             }
                         }                    
                     }                                    
                 }
-                if (id_selected.Count > 1)
+
+                //get dubaocung neu k co so lieu tuyen sinh nam do
+                if (id_selected.Count > 0)
                     {
                         foreach(int i in id_selected) {
                         {
-                            int cung_nb = getCungNumberDuBao(i);                            
-                            cung += cung_nb;
-                        }
-                        db_cung.Text = cung.ToString();
-                        xlApp.Workbooks.Close();
+                            getCungNumberDuBao(i,0);                                                        
+                        }                        
                     }
                 }
                 else
                 {
                     for (int i = 0; i < dgvTruong.RowCount; i++)
                     {
-                        int cung_nb = getCungNumberDuBao(i);
-                        cung += cung_nb;
-                    }
-                    db_cung.Text = cung.ToString();
-                    xlApp.Workbooks.Close();
+                        getCungNumberDuBao(i,1);                            
+                    }                    
                 }
+                updateDuBaoCung();                
+                xlApp.Workbooks.Close();
             }
             else 
             {
@@ -237,44 +297,41 @@ namespace Final
             prompt.Controls.Add(inputBox);
             prompt.ShowDialog();            
             return (int)inputBox.Value;
-        }
-
+        }       
+        private void returnListSchoolSearch(string name)
+        {
+            if (name.Length < 5)
+            {
+                (dgvTruong.DataSource as DataTable).DefaultView.RowFilter = string.Format("ma_truong='{0}'", name);
+            }
+            else
+            {
+                (dgvTruong.DataSource as DataTable).DefaultView.RowFilter = string.Format("TenTruong like '%{0}%'", name);
+            }
+        } 
+            
         private void quickFilter_Click(object sender, EventArgs e)
         {
-            db_cung.Text = "";
-            DBConnect db = new DBConnect();
-            db._conn.Open();
-            string sql = "SELECT cosodaotao.MaTruong as ma_truong,TenTruong,DiaChi,TuyenSinh.Nam as Nam,TuyenSinh.ChiTieu as chi_tieu FROM cosodaotao Inner Join TuyenSinh on TuyenSinh.MaTruong = cosodaotao.MaTruong AND TuyenSinh.Nam=" + nam;
+            db_cung.Text = "0";                    
             string search = "";
             if (textSearch.Text != "")
             {
                 search = textSearch.Text;
-                if (search.Length < 5)
-                {
-                    sql += "AND cosodaotao.MaTruong=" + "'" + search + "'";
-                }
-                else
-                {
-                    sql += "AND cosodaotao.TenTruong LIKE N'%" + search + "%'";
-                }
+                returnListSchoolSearch(search);
+                updateDuBaoCung();
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập từ khóa cần tìm kiếm");
-            }
-            Console.WriteLine(sql);
-            SqlDataAdapter da = new SqlDataAdapter(sql, db._conn);
-            DataTable dtTruong = new DataTable();
-            da.Fill(dtTruong);
-            dgvTruong.DataSource = dtTruong;
-            db._conn.Close();
+                dgvTruong.DataSource = dal_dubao.getDuBaoCung(nam);
+                updateDuBaoCung();
+            }            
         }
 
         private void btnLamMoi_Click_1(object sender, EventArgs e)
         {
-            dgvTruong.DataSource = dal_truong.getDuBaoCung(nam);
+            dgvTruong.DataSource = dal_dubao.getDuBaoCung(nam);
             textSearch.Text = "";
-            db_cung.Text = "";
+            updateDuBaoCung();
         }
     }
 }

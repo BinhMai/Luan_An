@@ -59,6 +59,8 @@
       <DependentUpon>AddTruong.cs</DependentUpon>
     </Compile>
     <Compile Include="Business\AC_Truong.cs" />
+    <Compile Include="Business\DAL_DuBao.cs" />
+    <Compile Include="Business\DTO_DuBao.cs" />
     <Compile Include="Business\DTO_TS.cs" />
     <Compile Include="Business\DAL_TS.cs" />
     <Compile Include="Business\DTO_Truong.cs" />

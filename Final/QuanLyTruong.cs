@@ -39,35 +39,30 @@ namespace Final
             add.Show();
             this.Visible = false;
         }
+        private void returnListSchoolSearch(string name)
+        {
+            if (name.Length < 5)
+            {
+                (dgvTruong.DataSource as DataTable).DefaultView.RowFilter = string.Format("ma_truong='{0}'", name);
+            }
+            else
+            {
+                (dgvTruong.DataSource as DataTable).DefaultView.RowFilter = string.Format("TenTruong like '%{0}%'", name);
+            }
+        } 
 
         private void quickFilter_Click_1(object sender, EventArgs e)
-        {
-            DBConnect db = new DBConnect();
-            db._conn.Open();
-            string sql = "SELECT cosodaotao.MaTruong as ma_truong,TenTruong,DiaChi,Website,DVChuquan,TinhThanh,TuyenSinh.ChiTieu as chi_tieu FROM cosodaotao Inner Join TuyenSinh on TuyenSinh.MaTruong = cosodaotao.MaTruong AND TuyenSinh.Nam=2016";
+        {            
             string search = "";
             if (textSearch.Text != "")
             {
                 search = textSearch.Text;
-                if (search.Length < 5)
-                {
-                    sql += "AND cosodaotao.MaTruong=" + "'" + search + "'";
-                }
-                else
-                {
-                    sql += "AND cosodaotao.TenTruong LIKE N'%" + search + "%'";
-                }
+                returnListSchoolSearch(search);
             }
             else
             {
                 MessageBox.Show("Vui lòng nhập từ khóa cần tìm kiếm");
-            }            
-            Console.WriteLine(sql);
-            SqlDataAdapter da = new SqlDataAdapter(sql, db._conn);
-            DataTable dtTruong = new DataTable();
-            da.Fill(dtTruong);
-            dgvTruong.DataSource = dtTruong;
-            db._conn.Close();
+            }                        
         }
 
         private void btnXoa_Click_1(object sender, EventArgs e)

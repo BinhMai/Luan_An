@@ -76,6 +76,53 @@ namespace FinalProject
 
             return false;
         }
+        public void updateTuyenSinh(DTO_TS ts)
+        {
+            try
+            {
+                // Ket noi
+                _conn.Open();
 
+                // Query string
+                string SQL = string.Format("update TuyenSinh set ChiTieu='{0}' where TuyenSinh.Nam='{1}'",ts.CHITIEU,ts.NAM);
+                Console.WriteLine(SQL);
+                SqlCommand cmd = new SqlCommand(SQL, _conn);
+                // Query và kiểm tra 
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Có lỗi trong khi update dữ liệu tuyển sinh!");
+            }
+            finally
+            {
+                // Dong ket noi
+                _conn.Close();
+            }
+        }
+        public void deleteTuyenSinh(int nam)
+        {
+            try
+            {
+                // Ket noi
+                _conn.Open();
+
+                // Query string
+                string SQL = string.Format("DELETE from TuyenSinh where TuyenSinh.Nam=" + nam);
+                Console.WriteLine(SQL);
+                SqlCommand cmd = new SqlCommand(SQL, _conn);
+                // Query và kiểm tra 
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Có lỗi trong khi xóa dữ liệu tuyển sinh!");
+            }
+            finally
+            {
+                // Dong ket noi
+                _conn.Close();
+            }
+        }
     }
 }
