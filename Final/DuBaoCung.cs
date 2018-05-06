@@ -217,10 +217,17 @@ namespace Final
                             }
                         }
                         else
-                        {
+                        {                            
                             for (int i = 0; i < dgvTruong.RowCount; i++)
                             {
-                                getCungNumber(i, MaTruong, TiLe,1);
+                                if (textSearch.Text == "")
+                                {
+                                    getCungNumber(i, MaTruong, TiLe, 1);
+                                }
+                                else
+                                {
+                                    getCungNumber(i, MaTruong, TiLe, 0);
+                                }                                
                             }
                         }                    
                     }                                    

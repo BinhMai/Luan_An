@@ -117,7 +117,7 @@ namespace FinalProject
                 _conn.Open();
 
                 // Query string
-                string SQL = string.Format("update dubaocung set DuBao='{0}', ChiTieu='{1}' where dubaocung.Nam='{2}' AND dubaocung.MaTruong='{3}'", db.DU_BAO, db.CHI_TIEU,db.NAM,db.MA_TRUONG);
+                string SQL = string.Format("update dubaocung set DuBao='{0}', ChiTieu='{1}',TiLe='{2}' where dubaocung.Nam='{3}' AND dubaocung.MaTruong='{4}'", db.DU_BAO, db.CHI_TIEU,db.TILE,db.NAM,db.MA_TRUONG);
                 Console.WriteLine(SQL);
                 SqlCommand cmd = new SqlCommand(SQL, _conn);
                 // Query và kiểm tra 
