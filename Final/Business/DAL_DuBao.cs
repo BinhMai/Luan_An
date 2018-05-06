@@ -132,6 +132,24 @@ namespace FinalProject
                 // Dong ket noi
                 _conn.Close();
             }
-        }        
+        }
+        public List<int> getNamDuBaoCung() {
+            List<int> ls_nam = new List<int>();
+            _conn.Open();
+            string SQL = string.Format("SELECT DISTINCT Nam from dubaocung");
+            Console.WriteLine(SQL);
+            // Command
+            SqlCommand cmd = new SqlCommand(SQL, _conn);
+            SqlDataReader data = cmd.ExecuteReader();            
+
+            while (data.Read())
+            {
+                int nam = Int32.Parse(data[0].ToString());
+                ls_nam.Add(nam);
+            }
+
+            _conn.Close();
+            return ls_nam;
+        }
     }
 }

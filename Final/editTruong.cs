@@ -15,6 +15,7 @@ namespace Final
     public partial class editTruong : Form
     {
         static string matruong = "";
+        static string value_2014 = "", value_2015 = "", value_2016 = "", value_2017 = "";
         public editTruong()
         {
             InitializeComponent();            
@@ -52,18 +53,33 @@ namespace Final
         public void setNb_2014(double nb_2014)
         {
             txtNam2014.Text = nb_2014.ToString();
+            value_2014 = nb_2014.ToString();
         }
         public void setNb_2015(double nb_2015)
         {
             txtNam2015.Text = nb_2015.ToString();
+            value_2015 = nb_2015.ToString();
         }
         public void setNb_2016(double nb_2016)
         {
             txtNam2016.Text = nb_2016.ToString();
+            value_2016 = nb_2016.ToString();
         }
         public void setNb_2017(double nb_2017)
         {
             txtNam2017.Text = nb_2017.ToString();
+            value_2017 = nb_2017.ToString();
+        }
+        private bool checkChangeValueNam() {
+            string nb_2014 = txtNam2014.Text,
+                    nb_2015 = txtNam2015.Text,
+                    nb_2016 = txtNam2016.Text,
+                    nb_2017 = txtNam2017.Text;
+            if (nb_2014 != value_2014 || nb_2015 != value_2015 || nb_2016 != value_2016 || nb_2017 != value_2017)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -108,7 +124,12 @@ namespace Final
                 if (matruong == ma_truong){
                     if (action.del_Truong(matruong) && action.add_Truong(truong, ls_ts))
                     {
-                        MessageBox.Show("Sửa thành công");
+                        if (checkChangeValueNam() && dal.updateTruong_Dubaocung(ma_truong))
+                        {
+
+                            MessageBox.Show("Sửa thành công");
+                        }                        
+
                     } else {
                         MessageBox.Show("Có lỗi trong khi sửa");
                     }                    

@@ -53,6 +53,13 @@ namespace FinalProject
             }
             return false;
         }
+        public bool del_Truong_DuBaoCung(string ma_truong) { 
+            DAL_Truong dal_truong = new DAL_Truong();
+            if (dal_truong.delTruong_Dubaocung(ma_truong)) {
+                return true;
+            }
+            return false;
+        }
         public bool add_Truong(DTO_Truong truong, List<DTO_TS> ls_ts)
         {                        
             if (!checkTextInput(truong))

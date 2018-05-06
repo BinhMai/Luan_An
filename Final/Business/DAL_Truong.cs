@@ -120,7 +120,122 @@ namespace FinalProject
                 _conn.Close();
             }
             return false;
+        }
+        private int bptoithieu(List<DTO_CT> listCt, int n, int nam)
+        {
+            double X = 0, Y = 0, XY = 0, XX = 0;
+
+            for (int j = 0; j < n; j++)
+            {
+                X += listCt[j].NAM;
+                Y += listCt[j].CHITIEU;
+                XX += listCt[j].NAM * listCt[j].NAM;
+                XY += listCt[j].NAM * listCt[j].CHITIEU;
+            }
+
+            double X1 = X / n, Y1 = Y / n, XX1 = XX / n, XY1 = XY / n;
+
+            double b1 = (XY1 - X1 * Y1) / (XX1 - X1 * X1);
+            double b2 = Y1 - X1 * b1;
+
+            int dubao = (int)(nam * b1 + b2);
+            if (dubao < 0)
+                return 0;
+            return dubao;
         }        
+        public bool updateTruong_Dubaocung(string matruong) {
+            _conn.Open();
+            string SQL = string.Format("Select Nam,ChiTieu from TuyenSinh where ChiTieu > 0 AND MaTruong = '" + matruong + "'");
+            Console.WriteLine(SQL);
+            // Command
+            SqlCommand cmd = new SqlCommand(SQL, _conn);
+            SqlDataReader data = cmd.ExecuteReader();
+            List<DTO_CT> listCt = new List<DTO_CT>();
+
+            while (data.Read())
+            {
+                DTO_CT ct = new DTO_CT(Int32.Parse(data[0].ToString()), Int32.Parse(data[1].ToString()));
+                listCt.Add(ct);
+            }
+            _conn.Close();
+
+            int n = listCt.Count;            
+            if (n != 0)
+            {
+                try
+                {
+                    _conn.Open();
+                    string SQL_1 = string.Format("Select TuyenSinh.MaTruong,TiLe,DuBao,TuyenSinh.Nam as ts_nam,TuyenSinh.ChiTieu as ts_chitieu,dubaocung.Nam as dbc_nam from dubaocung Inner Join TuyenSinh on TuyenSinh.MaTruong = dubaocung.MaTruong where dubaocung.MaTruong = '" + matruong + "'");
+                    Console.WriteLine(SQL_1);
+                    // Command
+                    SqlCommand cmd_1 = new SqlCommand(SQL_1, _conn);
+                    SqlDataReader data_1 = cmd_1.ExecuteReader();
+                    while (data_1.Read())
+                    {
+                        int dbc_nam = Int32.Parse(data_1[5].ToString());
+                        int ts_nam = Int32.Parse(data_1[3].ToString());                        
+                        double tile = Convert.ToDouble(data_1[1].ToString());
+                        int chitieu = 0;
+                        if (dbc_nam > 2017)
+                        {
+                            chitieu = bptoithieu(listCt, n, dbc_nam);
+                            int dubao = (int)(chitieu * tile) / 100;
+                            DTO_DuBao db = new DTO_DuBao(matruong, (float)tile, dubao, dbc_nam, chitieu);
+                            DAL_DuBao dal_db = new DAL_DuBao();
+                            dal_db.updateDuBaoCung(db);
+                        }
+                        else
+                        {
+                            if(dbc_nam == ts_nam){
+                                chitieu = Int32.Parse(data_1[4].ToString());
+                                int dubao = (int)(chitieu * tile) / 100;
+                                DTO_DuBao db = new DTO_DuBao(matruong, (float)tile, dubao, dbc_nam, chitieu);
+                                DAL_DuBao dal_db = new DAL_DuBao();
+                                dal_db.updateDuBaoCung(db);
+                            }
+                        }                                                                                                                  
+                    }
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Có lỗi trong khi update!");
+                }
+                finally
+                {
+                    // Dong ket noi
+                    _conn.Close();
+                }                                                  
+            }
+            return false;
+        }        
+        public bool delTruong_Dubaocung(string ma_truong)
+        {
+            try
+            {
+                // Ket noi
+                _conn.Open();
+
+                Boolean check = false;
+                // Query string
+                string SQL = string.Format("DELETE FROM dubaocung WHERE dubaocung.MaTruong='" + ma_truong + "'");
+                // Command                
+                SqlCommand cmd = new SqlCommand(SQL, _conn);
+                // Query và kiểm tra
+                if (cmd.ExecuteNonQuery() > 0)
+                    return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Có lỗi trong khi xóa!");
+            }
+            finally
+            {
+                // Dong ket noi
+                _conn.Close();
+            }
+            return false;
+        }       
         public bool addTruong(DTO_Truong truong)
         {
             System.Console.WriteLine(truong.MA_TRUONG);

@@ -70,7 +70,8 @@ namespace Final
             int r = dgvTruong.CurrentCell.RowIndex;            
             string ma_truong = dgvTruong.Rows[r].Cells[0].Value.ToString();
             AC_Truong action = new AC_Truong();
-            if (action.del_Truong(ma_truong)) {
+            if (action.del_Truong(ma_truong) && action.del_Truong_DuBaoCung(ma_truong))
+            {
                 MessageBox.Show("Xóa thành công");
                 dgvTruong.DataSource = dal_Truong.getTruong(); // load lại table
             }

@@ -51,6 +51,13 @@ namespace Final
             List<DTO_TS> ls_ts = new List<DTO_TS>();
             DTO_Truong truong = new DTO_Truong(ma_truong, ten_truong, dia_chi, website, tinh_thanh, dv_chu_quan);
             AC_Truong action = new AC_Truong();
+            DAL_DuBao dubao = new DAL_DuBao();
+            List<int> ls_nam = dubao.getNamDuBaoCung();
+            foreach (int nam in ls_nam) {
+                DTO_DuBao db = new DTO_DuBao(ma_truong,0,0,nam,0);
+                dubao.addDuBaoCung(db);
+            }
+
             string token = action.checkListString(ls_nb);
             if ( token != "OK")
             {
