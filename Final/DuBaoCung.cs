@@ -54,35 +54,35 @@ namespace Final
             String ma_truong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
             if (ma_truong.Equals(MaTruong))
             {
-                double chi_tieu = Convert.ToDouble(dgvTruong.Rows[i].Cells["chi_tieu"].Value.ToString());
+                double chi_tieu = Convert.ToDouble(dgvTruong.Rows[i].Cells["du_bao_tuyen_sinh"].Value.ToString());
                 int dubao = (int)(chi_tieu * TiLe) / 100;
 
                 if (check == 1)
                 {
                     DAL_DuBao dbcung = new DAL_DuBao();
 
-                    object tile = dgvTruong.Rows[i].Cells["ti_le"].Value;
-                    object db = dgvTruong.Rows[i].Cells["du_bao"].Value;
+                    object tile = dgvTruong.Rows[i].Cells["ti_le_do"].Value;
+                    object db = dgvTruong.Rows[i].Cells["so_lao_dong"].Value;
 
                     if (tile == null && db == null)
                     {
-                        dgvTruong.Rows[i].Cells["ti_le"].Value = TiLe;
-                        dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+                        dgvTruong.Rows[i].Cells["ti_le_do"].Value = TiLe;
+                        dgvTruong.Rows[i].Cells["so_lao_dong"].Value = dubao;
 
                         DTO_DuBao dbao = new DTO_DuBao(ma_truong, (float)TiLe, dubao, nam, (int)chi_tieu);
                         dbcung.addDuBaoCung(dbao);
                     }
                     else
                     {
-                        dgvTruong.Rows[i].Cells["ti_le"].Value = TiLe;
-                        dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+                        dgvTruong.Rows[i].Cells["ti_le_do"].Value = TiLe;
+                        dgvTruong.Rows[i].Cells["so_lao_dong"].Value = dubao;
 
                         DTO_DuBao dbao = new DTO_DuBao(ma_truong, (float)TiLe, dubao, nam, (int)chi_tieu);
                         dbcung.updateDuBaoCung(dbao);
                     }
                 }else {
-                    dgvTruong.Rows[i].Cells["ti_le"].Value = TiLe;
-                    dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+                    dgvTruong.Rows[i].Cells["ti_le_do"].Value = TiLe;
+                    dgvTruong.Rows[i].Cells["so_lao_dong"].Value = dubao;
                 }                
             }            
         }
@@ -90,7 +90,7 @@ namespace Final
         private void getCungNumberDuBao(int i, int check)
         {            
             String matruong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();            
-            if (dgvTruong.Rows[i].Cells["chi_tieu"].Value.ToString() == "0")
+            if (dgvTruong.Rows[i].Cells["du_bao_tuyen_sinh"].Value.ToString() == "0")
             {
                 DBConnect db = new DBConnect();
                 db._conn.Open();
@@ -116,32 +116,32 @@ namespace Final
                     dubao_ts = bptoithieu(listCt, n, nam);
                 }
 
-                dgvTruong.Rows[i].Cells["chi_tieu"].Value = dubao_ts;
+                dgvTruong.Rows[i].Cells["du_bao_tuyen_sinh"].Value = dubao_ts;
 
                 double tile = 0;
-                if (dgvTruong.Rows[i].Cells["ti_le"].Value != null)
+                if (dgvTruong.Rows[i].Cells["ti_le_do"].Value != null)
                 {
-                    tile = Convert.ToDouble(dgvTruong.Rows[i].Cells["ti_le"].Value.ToString());
+                    tile = Convert.ToDouble(dgvTruong.Rows[i].Cells["ti_le_do"].Value.ToString());
                 }
                 else
                 {
-                    dgvTruong.Rows[i].Cells["ti_le"].Value = 0;
+                    dgvTruong.Rows[i].Cells["ti_le_do"].Value = 0;
                 }
                 int dubao = (int)(dubao_ts * tile) / 100;
 
                 if (check == 1)
                 {
-                    object du_bao = dgvTruong.Rows[i].Cells["du_bao"].Value;
+                    object du_bao = dgvTruong.Rows[i].Cells["so_lao_dong"].Value;
                     if (du_bao != null)
                     {
-                        dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+                        dgvTruong.Rows[i].Cells["so_lao_dong"].Value = dubao;
                         DAL_DuBao dbcung = new DAL_DuBao();
                         DTO_DuBao dbao = new DTO_DuBao(matruong, (float)tile, dubao, nam, (int)dubao_ts);
                         dbcung.updateDuBaoCung(dbao);
                     }
                     else
                     {
-                        dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+                        dgvTruong.Rows[i].Cells["so_lao_dong"].Value = dubao;
                         DAL_DuBao dbcung = new DAL_DuBao();
                         DTO_DuBao dbao = new DTO_DuBao(matruong, (float)tile, dubao, nam, (int)dubao_ts);
                         dbcung.addDuBaoCung(dbao);
@@ -149,7 +149,7 @@ namespace Final
                 }
                 else 
                 {
-                    dgvTruong.Rows[i].Cells["du_bao"].Value = dubao;
+                    dgvTruong.Rows[i].Cells["so_lao_dong"].Value = dubao;
                 }                
             }            
         }
@@ -166,7 +166,7 @@ namespace Final
             int cung = 0;
             for (int i = 0; i < dgvTruong.RowCount; i++)
             {
-                object du_bao = dgvTruong.Rows[i].Cells["du_bao"].Value;
+                object du_bao = dgvTruong.Rows[i].Cells["so_lao_dong"].Value;
                 if(du_bao != null) {
                     int db = (int)du_bao;
                     cung+= db;
@@ -174,7 +174,7 @@ namespace Final
             }
             db_cung.Text = cung.ToString();
         }
-        private void btnLamMoi_Click(object sender, EventArgs e)
+        private void btnDuBaoCung_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Start");
             Excel.Application xlApp = new Excel.Application();
@@ -257,11 +257,7 @@ namespace Final
                 MessageBox.Show("Vui long chon file TiLeTotNghiep.xlsx");
             }            
         }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-           
-        }
+        
         private int bptoithieu(List<DTO_CT> listCt,int n, int nam)
         {
             double X = 0, Y = 0, XY = 0, XX = 0;
@@ -284,6 +280,7 @@ namespace Final
                 return 0;
             return dubao;
         }
+
         public static int ShowDialog(string text, string caption)
         {
             Form prompt = new Form();
@@ -339,6 +336,11 @@ namespace Final
             dgvTruong.DataSource = dal_dubao.getDuBaoCung(nam);
             textSearch.Text = "";
             updateDuBaoCung();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

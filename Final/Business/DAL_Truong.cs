@@ -165,7 +165,7 @@ namespace FinalProject
                 try
                 {
                     _conn.Open();
-                    string SQL_1 = string.Format("Select TuyenSinh.MaTruong,TiLe,DuBao,TuyenSinh.Nam as ts_nam,TuyenSinh.ChiTieu as ts_chitieu,dubaocung.Nam as dbc_nam from dubaocung Inner Join TuyenSinh on TuyenSinh.MaTruong = dubaocung.MaTruong where dubaocung.MaTruong = '" + matruong + "'");
+                    string SQL_1 = string.Format("Select TuyenSinh.MaTruong,TiLeDo,SoLaoDong,TuyenSinh.Nam as ts_nam,TuyenSinh.ChiTieu as ts_chitieu,dubaocung.Nam as dbc_nam from dubaocung Inner Join TuyenSinh on TuyenSinh.MaTruong = dubaocung.MaTruong where dubaocung.MaTruong = '" + matruong + "'");
                     Console.WriteLine(SQL_1);
                     // Command
                     SqlCommand cmd_1 = new SqlCommand(SQL_1, _conn);

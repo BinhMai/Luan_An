@@ -19,8 +19,8 @@ namespace FinalProject
             string sql = "SELECT * from dubaocung where dubaocung.Nam=" + nam;            
             string sql_1 = "SELECT cosodaotao.MaTruong as ma_truong,TenTruong,DiaChi FROM cosodaotao";
             string sql_2 = "SELECT * from TuyenSinh where TuyenSinh.Nam=" + nam;
-            string sql_3 = "SELECT cosodaotao.MaTruong as ma_truong,TenTruong,DiaChi,dubaocung.Nam as Nam,dubaocung.ChiTieu as chi_tieu, dubaocung.TiLe as ti_le, dubaocung.DuBao as du_bao FROM cosodaotao Inner Join dubaocung on dubaocung.MaTruong = cosodaotao.MaTruong AND dubaocung.Nam=" + nam;
-            string sql_4 = "SELECT cosodaotao.MaTruong as ma_truong,TenTruong,DiaChi,TuyenSinh.Nam as Nam,TuyenSinh.ChiTieu as chi_tieu FROM cosodaotao Inner Join TuyenSinh on TuyenSinh.MaTruong = cosodaotao.MaTruong AND TuyenSinh.Nam=" + nam;            
+            string sql_3 = "SELECT cosodaotao.MaTruong as ma_truong,TenTruong,DiaChi,dubaocung.Nam as Nam,dubaocung.DuBaoTuyenSinh as du_bao_tuyen_sinh, dubaocung.TiLeDo as ti_le_do, dubaocung.SoLaoDong as so_lao_dong FROM cosodaotao Inner Join dubaocung on dubaocung.MaTruong = cosodaotao.MaTruong AND dubaocung.Nam=" + nam;
+            string sql_4 = "SELECT cosodaotao.MaTruong as ma_truong,TenTruong,DiaChi,TuyenSinh.Nam as Nam,TuyenSinh.ChiTieu as du_bao_tuyen_sinh FROM cosodaotao Inner Join TuyenSinh on TuyenSinh.MaTruong = cosodaotao.MaTruong AND TuyenSinh.Nam=" + nam;            
             SqlCommand cmd = new SqlCommand(sql, _conn);
             SqlDataReader data = cmd.ExecuteReader();
             if (data.HasRows){
@@ -44,7 +44,7 @@ namespace FinalProject
                     dtTruong.Columns.Add("TenTruong", typeof(string));
                     dtTruong.Columns.Add("DiaChi", typeof(string));
                     dtTruong.Columns.Add("Nam", typeof(int));
-                    dtTruong.Columns.Add("chi_tieu", typeof(int));
+                    dtTruong.Columns.Add("du_bao_tuyen_sinh", typeof(int));
 
                     SqlCommand cmd_2 = new SqlCommand(sql_1, _conn);
                     SqlDataReader data_2 = cmd_2.ExecuteReader();
@@ -67,7 +67,7 @@ namespace FinalProject
                 _conn.Open();
 
                 // Query string
-                string SQL = string.Format("INSERT INTO dubaocung(MaTruong, TiLe, DuBao,Nam,ChiTieu) VALUES ('{0}','{1}','{2}','{3}','{4}')", dubao.MA_TRUONG, dubao.TILE, dubao.DU_BAO, dubao.NAM,dubao.CHI_TIEU);                
+                string SQL = string.Format("INSERT INTO dubaocung(MaTruong, Nam,DuBaoTuyenSinh,TiLeDo,SoLaoDong) VALUES ('{0}','{1}','{2}','{3}','{4}')", dubao.MA_TRUONG,dubao.NAM,dubao.DU_BAO_TUYEN_SINH,dubao.TI_LE_DO,dubao.SO_LAO_DONG);                
                 // Command    
                 Console.WriteLine(SQL);
                 SqlCommand cmd = new SqlCommand(SQL, _conn);
@@ -117,7 +117,7 @@ namespace FinalProject
                 _conn.Open();
 
                 // Query string
-                string SQL = string.Format("update dubaocung set DuBao='{0}', ChiTieu='{1}',TiLe='{2}' where dubaocung.Nam='{3}' AND dubaocung.MaTruong='{4}'", db.DU_BAO, db.CHI_TIEU,db.TILE,db.NAM,db.MA_TRUONG);
+                string SQL = string.Format("update dubaocung set SoLaoDong='{0}', DuBaoTuyenSinh='{1}',TiLeDo='{2}' where dubaocung.Nam='{3}' AND dubaocung.MaTruong='{4}'", db.SO_LAO_DONG, db.DU_BAO_TUYEN_SINH,db.TI_LE_DO,db.NAM,db.MA_TRUONG);
                 Console.WriteLine(SQL);
                 SqlCommand cmd = new SqlCommand(SQL, _conn);
                 // Query và kiểm tra 

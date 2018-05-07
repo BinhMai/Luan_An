@@ -8,18 +8,18 @@ namespace FinalProject
     class DTO_DuBao
     {
         private string _MA_TRUONG;                
-        private float _TILE;
-        private int _DU_BAO;
+        private float _TI_LE_DO;
+        private int _SO_LAO_DONG;
         private int _NAM;
-        private int _CHI_TIEU;
+        private int _DU_BAO_TUYEN_SINH;
 
-        public DTO_DuBao(string MA_TRUONG, float TI_LE, int DU_BAO, int NAM, int CHI_TIEU)
+        public DTO_DuBao(string MA_TRUONG, float TI_LE_DO, int SO_LAO_DONG, int NAM, int DU_BAO_TUYEN_SINH)
         {
             _MA_TRUONG = MA_TRUONG;
-            _TILE = TI_LE;
-            _DU_BAO = DU_BAO;
+            _TI_LE_DO = TI_LE_DO;
+            _SO_LAO_DONG = SO_LAO_DONG;
             _NAM = NAM;
-            _CHI_TIEU = CHI_TIEU;
+            _DU_BAO_TUYEN_SINH = DU_BAO_TUYEN_SINH;
         }
 
         /* ======== GETTER/SETTER ======== */
@@ -36,28 +36,28 @@ namespace FinalProject
             }
         }
 
-        public float TILE
+        public float TI_LE_DO
         {
             get
             {
-                return _TILE;
+                return _TI_LE_DO;
             }
 
             set
             {
-                _TILE = value;
+                _TI_LE_DO = value;
             }
         }
-        public int DU_BAO
+        public int SO_LAO_DONG
         {
             get
             {
-                return _DU_BAO;
+                return _SO_LAO_DONG;
             }
 
             set
             {
-                _DU_BAO = value;
+                _SO_LAO_DONG = value;
             }
         }
         public int NAM
@@ -72,16 +72,16 @@ namespace FinalProject
                 _NAM = value;
             }
         }
-        public int CHI_TIEU
+        public int DU_BAO_TUYEN_SINH
         {
             get
             {
-                return _CHI_TIEU;
+                return _DU_BAO_TUYEN_SINH;
             }
 
             set
             {
-                _CHI_TIEU = value;
+                _DU_BAO_TUYEN_SINH = value;
             }
         }
     }
