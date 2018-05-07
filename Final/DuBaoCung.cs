@@ -159,30 +159,77 @@ namespace Final
             }
             db_cung.Text = cung.ToString();
         }
-        private List<string> checkTiLeDo() {
-            List<string> ls_truong = new List<string>();
-            for (int i = 0; i < dgvTruong.RowCount; i++)
+        private string checkTiLeDo(int i, int check) {
+            if (check == 1)
             {
-                object du_bao = dgvTruong.Rows[i].Cells["so_lao_dong"].Value;
-                if (du_bao == null)
+                object ti_le_do = dgvTruong.Rows[i].Cells["ti_le_do"].Value;
+                if (ti_le_do == null)
                 {
                     string ma_truong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
-                    int chi_tieu = (int)dgvTruong.Rows[i].Cells["du_bao_tuyen_sinh"].Value;
-                    ls_truong.Add(ma_truong);
+                    int chi_tieu = (int)dgvTruong.Rows[i].Cells["du_bao_tuyen_sinh"].Value;                    
                     dgvTruong.Rows[i].Cells["ti_le_do"].Value = 0;
                     dgvTruong.Rows[i].Cells["so_lao_dong"].Value = 0;
                     DAL_DuBao dbcung = new DAL_DuBao();
                     DTO_DuBao dbao = new DTO_DuBao(ma_truong, 0, 0, nam, chi_tieu);
                     dbcung.addDuBaoCung(dbao);
+                    return ma_truong;
                 }
                 else
                 {
-                    if ((int)du_bao == 0) {
+                    if (ti_le_do.ToString().Equals("0"))
+                    {
                         string ma_truong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
-                        ls_truong.Add(ma_truong);
+                        return ma_truong;
                     }
                 }
             }
+            else
+            {
+                object ti_le_do = dgvTruong.Rows[i].Cells["ti_le_do"].Value;
+                if (ti_le_do == null)
+                {
+                    string ma_truong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
+                    int chi_tieu = (int)dgvTruong.Rows[i].Cells["du_bao_tuyen_sinh"].Value;                    
+                    dgvTruong.Rows[i].Cells["ti_le_do"].Value = 0;
+                    dgvTruong.Rows[i].Cells["so_lao_dong"].Value = 0;
+                    return ma_truong;
+                }
+                else
+                {
+                    if (ti_le_do.ToString().Equals("0"))
+                    {
+                        string ma_truong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
+                        return ma_truong;
+                    }
+                }
+            }
+            return "";
+        }
+        private List<string> getTiLeDoNull() {
+            List<string> ls_truong = new List<string>();
+            List<int> id_selected = getIdSelected(); 
+            if (id_selected.Count > 0)
+            {
+                foreach (int i in id_selected)
+                {
+                    string truong = checkTiLeDo(i, 0);
+                    if (truong != "")
+                    {
+                        ls_truong.Add(truong);
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < dgvTruong.RowCount; i++)
+                {
+                    string truong = checkTiLeDo(i, 1);
+                    if (truong != "")
+                    {
+                        ls_truong.Add(truong);
+                    }
+                }   
+            }            
             return ls_truong;
         }
         private void btnDuBaoCung_Click(object sender, EventArgs e)
@@ -260,7 +307,7 @@ namespace Final
                         getSoLaoDongDuBao(i,1);                            
                     }                    
                 }
-                List<string> ls_truong_null = checkTiLeDo();
+                List<string> ls_truong_null = getTiLeDoNull();
                 if (ls_truong_null.Count > 0) {
                     string mess = "Danh sách mã trường cần cập nhật thông tin Tỉ lệ đỗ:\n";
                     foreach (string truong in ls_truong_null)

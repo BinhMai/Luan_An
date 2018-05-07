@@ -161,12 +161,12 @@ namespace FinalProject
 
                 Boolean check = false;
                 // Query string
-                string SQL = string.Format("DELETE FROM dubaocung WHERE dubaocung.MaTruong='" + ma_truong + "'");
+                string SQL = string.Format("select * FROM dubaocung WHERE dubaocung.MaTruong='" + ma_truong + "'");
                 // Command                
                 SqlCommand cmd = new SqlCommand(SQL, _conn);
                 // Query và kiểm tra
-                if (cmd.ExecuteNonQuery() > 0)
-                    return true;
+                cmd.ExecuteNonQuery();
+                return true;
             }
             catch (Exception e)
             {
@@ -202,7 +202,6 @@ namespace FinalProject
             return dubao;
         }
 
-        
         public bool updateTruong_Dubaocung(string matruong)
         {
             _conn.Open();
