@@ -215,9 +215,9 @@
             this.tiLeMucLuong.Location = new System.Drawing.Point(671, 503);
             this.tiLeMucLuong.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.tiLeMucLuong.Name = "tiLeMucLuong";
-            this.tiLeMucLuong.Size = new System.Drawing.Size(94, 24);
+            this.tiLeMucLuong.Size = new System.Drawing.Size(93, 24);
             this.tiLeMucLuong.TabIndex = 74;
-            this.tiLeMucLuong.Text = "sinh viên";
+            this.tiLeMucLuong.Text = "lao động";
             // 
             // db_cung
             // 
