@@ -100,6 +100,34 @@ namespace FinalProject
                 _conn.Close();
             }
         }
+        public bool delTruong_Ts(string ma_truong)
+        {
+            try
+            {
+                // Ket noi
+                _conn.Open();
+
+                Boolean check = false;
+                // Query string
+                string SQL = string.Format("DELETE FROM TuyenSinh WHERE TuyenSinh.MaTruong='" + ma_truong + "'");
+                // Command                
+                SqlCommand cmd = new SqlCommand(SQL, _conn);
+                // Query và kiểm tra
+                if (cmd.ExecuteNonQuery() > 0)
+                    return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Có lỗi trong khi xóa!");
+            }
+            finally
+            {
+                // Dong ket noi
+                _conn.Close();
+            }
+            return false;
+        }
+
         public void deleteTuyenSinh(int nam)
         {
             try
@@ -123,6 +151,41 @@ namespace FinalProject
                 // Dong ket noi
                 _conn.Close();
             }
+        }
+        public List<DTO_CT> getListTS(string matruong)
+        {            
+            _conn.Open();
+            string SQL = string.Format("Select Nam,ChiTieu from TuyenSinh where ChiTieu > 0 AND MaTruong = '" + matruong + "'");
+            Console.WriteLine(SQL);
+            // Command
+            SqlCommand cmd = new SqlCommand(SQL, _conn);
+            SqlDataReader data = cmd.ExecuteReader();
+            List<DTO_CT> listCt = new List<DTO_CT>();
+
+            while (data.Read())
+            {
+                DTO_CT ct = new DTO_CT(Int32.Parse(data[0].ToString()), Int32.Parse(data[1].ToString()));
+                listCt.Add(ct);
+            }
+
+            _conn.Close();
+            return listCt;
+        }
+
+        public List<int> getInfoTuyenSinh(string ma_truong)
+        {
+            List<int> data = new List<int>();
+            _conn.Open();
+            string sql_1 = "SELECT * FROM tuyensinh where MaTruong=N'" + ma_truong + "'";
+            SqlCommand cmd_1 = new SqlCommand(sql_1, _conn);
+            SqlDataReader data_1 = cmd_1.ExecuteReader();
+            while (data_1.Read())
+            {
+                data.Add((int)data_1[2]);
+            }
+            data_1.Close();
+            _conn.Close();
+            return data;
         }
     }
 }

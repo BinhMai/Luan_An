@@ -47,19 +47,13 @@ namespace FinalProject
         }
         public bool del_Truong(string ma_truong) {
             DAL_Truong dal_truong = new DAL_Truong();
-            if (dal_truong.delTruong_Csdt(ma_truong) && dal_truong.delTruong_Ts(ma_truong)) 
+            DAL_TS tuyensinh = new DAL_TS();
+            if (dal_truong.delTruong_Csdt(ma_truong) && tuyensinh.delTruong_Ts(ma_truong)) 
             {               
                 return true;
             }
             return false;
-        }
-        public bool del_Truong_DuBaoCung(string ma_truong) { 
-            DAL_Truong dal_truong = new DAL_Truong();
-            if (dal_truong.delTruong_Dubaocung(ma_truong)) {
-                return true;
-            }
-            return false;
-        }
+        }        
         public bool add_Truong(DTO_Truong truong, List<DTO_TS> ls_ts)
         {                        
             if (!checkTextInput(truong))
@@ -80,8 +74,7 @@ namespace FinalProject
                     return false;
                 }                                    
             }
-        }
-
+        }       
         public void getExcel() { 
         }
     }

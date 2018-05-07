@@ -49,7 +49,7 @@ namespace Final
             return id_selected;
         }
 
-        private void getCungNumber(int i, string MaTruong, double TiLe, int check)
+        private void getSoLaoDong(int i, string MaTruong, double TiLe, int check)
         {            
             String ma_truong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();
             if (ma_truong.Equals(MaTruong))
@@ -87,28 +87,13 @@ namespace Final
             }            
         }
 
-        private void getCungNumberDuBao(int i, int check)
+        private void getSoLaoDongDuBao(int i, int check)
         {            
             String matruong = dgvTruong.Rows[i].Cells["ma_truong"].Value.ToString();            
             if (dgvTruong.Rows[i].Cells["du_bao_tuyen_sinh"].Value.ToString() == "0")
             {
-                DBConnect db = new DBConnect();
-                db._conn.Open();
-                string SQL = string.Format("Select Nam,ChiTieu from TuyenSinh where ChiTieu > 0 AND MaTruong = '" + matruong + "'");
-                Console.WriteLine(SQL);
-                // Command
-                SqlCommand cmd = new SqlCommand(SQL, db._conn);
-                SqlDataReader data = cmd.ExecuteReader();
-                List<DTO_CT> listCt = new List<DTO_CT>();
-
-                while (data.Read())
-                {
-                    DTO_CT ct = new DTO_CT(Int32.Parse(data[0].ToString()), Int32.Parse(data[1].ToString()));
-                    listCt.Add(ct);
-                }
-
-                db._conn.Close();
-
+                DAL_TS ts = new DAL_TS();
+                List<DTO_CT> listCt = ts.getListTS(matruong);
                 int n = listCt.Count;
                 int dubao_ts = 0;
                 if (n != 0)
@@ -213,7 +198,7 @@ namespace Final
                         {                            
                             foreach (int i in id_selected)
                             {
-                                getCungNumber(i, MaTruong, TiLe,0);                                
+                                getSoLaoDong(i, MaTruong, TiLe,0);                                
                             }
                         }
                         else
@@ -222,11 +207,11 @@ namespace Final
                             {
                                 if (textSearch.Text == "")
                                 {
-                                    getCungNumber(i, MaTruong, TiLe, 1);
+                                    getSoLaoDong(i, MaTruong, TiLe, 1);
                                 }
                                 else
                                 {
-                                    getCungNumber(i, MaTruong, TiLe, 0);
+                                    getSoLaoDong(i, MaTruong, TiLe, 0);
                                 }                                
                             }
                         }                    
@@ -238,7 +223,7 @@ namespace Final
                     {
                         foreach(int i in id_selected) {
                         {
-                            getCungNumberDuBao(i,0);                                                        
+                            getSoLaoDongDuBao(i,0);                                                        
                         }                        
                     }
                 }
@@ -246,7 +231,7 @@ namespace Final
                 {
                     for (int i = 0; i < dgvTruong.RowCount; i++)
                     {
-                        getCungNumberDuBao(i,1);                            
+                        getSoLaoDongDuBao(i,1);                            
                     }                    
                 }
                 updateDuBaoCung();                

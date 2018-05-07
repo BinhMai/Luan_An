@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Final
 {
@@ -19,7 +21,7 @@ namespace Final
         }
         public void GUI_Truong_Load(object sender, EventArgs e)
         {
-            dgvTruong.DataSource = dal_Truong.getTruong(); // get sinh vien
+            dgvTruong.DataSource = dal_Truong.getTruong();
         }        
         private void btnQuayLai_Click_1(object sender, EventArgs e)
         {
@@ -70,7 +72,8 @@ namespace Final
             int r = dgvTruong.CurrentCell.RowIndex;            
             string ma_truong = dgvTruong.Rows[r].Cells[0].Value.ToString();
             AC_Truong action = new AC_Truong();
-            if (action.del_Truong(ma_truong) && action.del_Truong_DuBaoCung(ma_truong))
+            DAL_DuBao dubao = new DAL_DuBao();
+            if (action.del_Truong(ma_truong) && dubao.del_Truong_DuBaoCung(ma_truong))
             {
                 MessageBox.Show("Xóa thành công");
                 dgvTruong.DataSource = dal_Truong.getTruong(); // load lại table
@@ -82,45 +85,24 @@ namespace Final
             this.Visible = false;
             showTruong show = new showTruong();
             DBConnect db = new DBConnect();
-            int r = dgvTruong.CurrentCell.RowIndex;
+            int r = dgvTruong.CurrentCell.RowIndex;            
 
             string ma_truong = dgvTruong.Rows[r].Cells[0].Value.ToString();
+            DAL_Truong dal_truong = new DAL_Truong();
+            DAL_TS tuyensinh = new DAL_TS();
+            List<string> data = dal_Truong.getInfoTruong(ma_truong);
+            show.setMatruong(data[0]);
+            show.setTentruong(data[1]);
+            show.setDiaChi(data[2]);
+            show.setWebsite(data[3]);
+            show.setTinhthanh(data[4]);
+            show.setDvChuQuan(data[5]);
 
-            db._conn.Open();
-            string sql = "SELECT * FROM cosodaotao where MaTruong=N'"+ma_truong+"'";
-            SqlCommand cmd = new SqlCommand(sql, db._conn);
-            SqlDataReader data = cmd.ExecuteReader();
-            while (data.Read()) {
-                show.setMatruong((string)data[0]);
-                show.setTentruong((string)data[1]);
-                show.setDiaChi((string)data[2]);
-                show.setWebsite((string)data[3]);
-                show.setTinhthanh((string)data[4]);
-                show.setDvChuQuan((string)data[5]);               
-            }
-            data.Close();
-
-            string sql_1 = "SELECT * FROM tuyensinh where MaTruong=N'"+ma_truong+"'";
-            SqlCommand cmd_1 = new SqlCommand(sql_1, db._conn);
-            SqlDataReader data_1 = cmd_1.ExecuteReader();
-            while (data_1.Read()) {
-                if ((int)data_1[1] == 2014)
-                {
-                    show.setNb_2014((int)data_1[2]);
-                }
-                else if ((int)data_1[1] == 2015)
-                {
-                    show.setNb_2015((int)data_1[2]);
-                }
-                else if ((int)data_1[1] == 2016)
-                {
-                    show.setNb_2016((int)data_1[2]);
-                }else {
-                    show.setNb_2017((int)data_1[2]);
-                }                
-            }
-            data_1.Close();
-            db._conn.Close();
+            List<int> data_1 = tuyensinh.getInfoTuyenSinh(ma_truong);
+            show.setNb_2014((int)data_1[0]);
+            show.setNb_2015((int)data_1[1]);
+            show.setNb_2016((int)data_1[2]);
+            show.setNb_2017((int)data_1[3]);
             show.Show();
         }
 
@@ -133,45 +115,22 @@ namespace Final
 
             string ma_truong = dgvTruong.Rows[r].Cells[0].Value.ToString();
 
-            db._conn.Open();
-            string sql = "SELECT * FROM cosodaotao where MaTruong=N'" + ma_truong + "'";
-            SqlCommand cmd = new SqlCommand(sql, db._conn);
-            SqlDataReader data = cmd.ExecuteReader();
-            while (data.Read())
-            {
-                show.setMatruong((string)data[0]);
-                show.setTentruong((string)data[1]);
-                show.setDiaChi((string)data[2]);
-                show.setWebsite((string)data[3]);
-                show.setTinhthanh((string)data[4]);
-                show.setDvChuQuan((string)data[5]);
-            }
-            data.Close();
+            DAL_Truong dal_truong = new DAL_Truong();
+            DAL_TS tuyensinh = new DAL_TS();
+            List<string> data = dal_Truong.getInfoTruong(ma_truong);
+            show.setMatruong(data[0]);
+            show.setTentruong(data[1]);
+            show.setDiaChi(data[2]);
+            show.setWebsite(data[3]);
+            show.setTinhthanh(data[4]);
+            show.setDvChuQuan(data[5]);
 
-            string sql_1 = "SELECT * FROM tuyensinh where MaTruong=N'" + ma_truong + "'";
-            SqlCommand cmd_1 = new SqlCommand(sql_1, db._conn);
-            SqlDataReader data_1 = cmd_1.ExecuteReader();
-            while (data_1.Read())
-            {
-                if ((int)data_1[1] == 2014)
-                {
-                    show.setNb_2014((int)data_1[2]);
-                }
-                else if ((int)data_1[1] == 2015)
-                {
-                    show.setNb_2015((int)data_1[2]);
-                }
-                else if ((int)data_1[1] == 2016)
-                {
-                    show.setNb_2016((int)data_1[2]);
-                }
-                else
-                {
-                    show.setNb_2017((int)data_1[2]);
-                }                
-            }
-            data_1.Close();
-            db._conn.Close();
+            List<int> data_1 = tuyensinh.getInfoTuyenSinh(ma_truong);
+            show.setNb_2014((int)data_1[0]);
+            show.setNb_2015((int)data_1[1]);
+            show.setNb_2016((int)data_1[2]);
+            show.setNb_2017((int)data_1[3]);
+            
             show.Show();
         }
 

@@ -102,6 +102,7 @@ namespace Final
 
             List<DTO_TS> ls_ts = new List<DTO_TS>();
             DAL_Truong dal = new DAL_Truong();
+            DAL_DuBao dubao = new DAL_DuBao();
             DTO_Truong truong = new DTO_Truong(ma_truong, ten_truong, dia_chi, website, tinh_thanh, dv_chu_quan);
             AC_Truong action = new AC_Truong();
             string token = action.checkListString(ls_nb);
@@ -124,7 +125,7 @@ namespace Final
                 if (matruong == ma_truong){
                     if (action.del_Truong(matruong) && action.add_Truong(truong, ls_ts))
                     {
-                        if (checkChangeValueNam() && dal.updateTruong_Dubaocung(ma_truong))
+                        if (checkChangeValueNam() && dubao.updateTruong_Dubaocung(ma_truong))
                         {
 
                             MessageBox.Show("Sửa thành công");
