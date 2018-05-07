@@ -222,11 +222,23 @@ namespace Final
             else
             {
                 for (int i = 0; i < dgvTruong.RowCount; i++)
-                {
-                    string truong = checkTiLeDo(i, 1);
-                    if (truong != "")
+                {                    
+                    string search = textSearch.Text;
+                    if (search == "")
                     {
-                        ls_truong.Add(truong);
+                        string truong = checkTiLeDo(i, 1);
+                        if (truong != "")
+                        {
+                            ls_truong.Add(truong);
+                        }
+                    }
+                    else
+                    {
+                        string truong = checkTiLeDo(i, 0);
+                        if (truong != "")
+                        {
+                            ls_truong.Add(truong);
+                        }
                     }
                 }   
             }            
